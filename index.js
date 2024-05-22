@@ -2,14 +2,17 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from 'mongoose'
 import _ from "lodash";
- 
+import dotenv from 'dotenv';
+dotenv.config();
+
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-Rishabh:rish7869@cluster0.w2cgmbz.mongodb.net/todoListDB");
+// Use the MongoDB connection string from the environment variables
+mongoose.connect(process.env.MONGODB_URI);
 
 const itemSchema = new mongoose.Schema({
   task: String
