@@ -1,0 +1,67 @@
+<%- include('partials/header.ejs'); -%> <!-- Include the header partial -->
+
+<!-- Heading section -->
+<div class="box" id="heading">
+  <h1>
+    <%= listTitle %> <!-- Display the list title passed from the backend -->
+  </h1>
+</div>
+
+<!-- Container for list items -->
+<div class="box">
+  <% for(let item of listItems){ %> <!-- Loop through each item in the listItems array -->
+    <div class="item">
+      
+      <!-- Delete form -->
+      <form action="/delete" method="post">
+        <!-- Checkbox for deleting an item, submits form on change -->
+        <input type="checkbox" onchange="this.form.submit()" name="deleteItemId" value="<%= item._id %>">
+        <input type="hidden" name="listName" value="<%= listTitle %>">
+      </form>
+
+      <!-- Display the current task -->
+      <p id="title<%= item._id %>">
+        <%= item.task %>
+      </p>
+
+      <!-- Edit form -->
+      <form class="edit" action="/edit" method="post">
+        <!-- Hidden input to store the item's ID -->
+        <input type="hidden" name="updatedItemId" value="<%= item._id %>">
+        <!-- Text input for the new task text, initially hidden -->
+        <input id="input<%= item._id %>" type="text" name="updatedItemTitle" value="<%= item.task %>" autocomplete="off" hidden>
+        <!-- Submit button for the edit form, initially hidden -->
+        <button id="done<%= item._id %>" class="edit" type="submit" hidden>
+          <img class="icon" src="/assets/icons/check-solid.svg" alt="tick image">
+        </button>
+      </form>
+
+      <!-- Edit button -->
+      <button id="edit<%= item._id %>" class="edit" onclick="handler('<%= item._id %>')">
+        <img class="icon" src="/assets/icons/pencil-solid.svg" alt="pencil image">
+      </button>
+    </div>
+  <% } %> <!-- End of loop -->
+
+  <!-- Form to add a new item -->
+  <form class="item" action="/add" method="post">
+    <!-- Input for new item text -->
+    <input type="text" name="newItem" placeholder="New Item" autocomplete="off" autofocus>
+    <!-- Submit button for adding a new item -->
+    <button class="add" type="submit" name="list" value="<%= listTitle %>">+</button>
+  </form>
+</div>
+
+<!-- JavaScript function to handle the edit button click -->
+<script>
+  function handler(id) {
+    // Hide the current task text and edit button
+    document.getElementById("title" + id).setAttribute("hidden", true);
+    document.getElementById("edit" + id).setAttribute("hidden", true);
+    // Show the text input and submit button for editing
+    document.getElementById("done" + id).removeAttribute("hidden");
+    document.getElementById("input" + id).removeAttribute("hidden");
+  }
+</script>
+
+<%- include('partials/footer.ejs'); -%> <!-- Include the footer partial -->
