@@ -71,8 +71,9 @@ The TaskFlow project is a simple yet efficient web application designed to help 
 ## Live Preview
 
 TaskFlow is live on Render [https://todo-list-rishabh.onrender.com/](https://todo-list-rishabh.onrender.com/)..
----
-It may take some time to load for the first time, as it is deployed on the free tier of [Render](https://render.com/), which puts the application to sleep in case of inactivity.
+
+It may take some time to load for the first time, as it is deployed on the free tier of [Render](https://render.com/), which puts the application to sleep in case of inactivity.  
+[ Free instance will spin down with inactivity, which can delay requests by 50 seconds or more ]
 
 ## Acknowledgments
 - [MongoDB](https://www.mongodb.com/) for the database management system.
