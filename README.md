@@ -99,7 +99,7 @@ Contributions are welcome! Please follow these steps to contribute:
 
 ## 🚀 About Me
 
-Hi there! 👋 I'm [Rishabh Gokhe], the developer behind TaskFlow. I'm passionate about creating useful and user-friendly web applications that help people improve their productivity and organization. Still learning new technology...
+Hi there! 👋 I'm Rishabh Gokhe, the developer behind TaskFlow. I'm passionate about creating useful and user-friendly web applications that help people improve their productivity and organization. Still learning new technology...
 
 Feel free to reach out if you have any questions, suggestions, or just want to chat about programming and technology. I'm always excited to connect with fellow developers and enthusiasts!
 
