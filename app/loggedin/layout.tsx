@@ -1,4 +1,3 @@
-import ConvexClientProvider from "../ConvexClientProvider";
 import { auth } from "@/auth";
 
 export default async function LoggedInLayout({
@@ -9,6 +8,6 @@ export default async function LoggedInLayout({
   const session = await auth();
 
   return (
-    <ConvexClientProvider session={session}>{children}</ConvexClientProvider>
+    {children}
   );
 }
