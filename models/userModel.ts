@@ -15,7 +15,8 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        minLength: [10, 'Password must be atleast 10 Characters']
+        minLength: [10, 'Password must be atleast 10 Characters'],
+        select: false
     },
     createdAt: {
         type: Date,
@@ -28,6 +29,6 @@ const UserSchema = new mongoose.Schema({
     }
 );
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.models.User || mongoose.model('User', UserSchema);
 
 export default User;

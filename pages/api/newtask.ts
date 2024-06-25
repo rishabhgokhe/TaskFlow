@@ -15,7 +15,7 @@ const newTask = catchAsyncError(async (req: NextApiRequest, res: NextApiResponse
       title,
       description,
     });
-    return handleRes(res, 200, true, "Task created");
+    handleRes(res, 200, true, "Task created");
 });
 
 export default newTask;

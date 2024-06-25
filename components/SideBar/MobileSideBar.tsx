@@ -1,15 +1,6 @@
 import React from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import {
-  Bell,
-  Home,
-  LineChart,
-  Menu,
-  Package,
-  Package2,
-  ShoppingCart,
-  Users,
-} from "lucide-react";
+import { Bell, Flower, Menu } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import {
@@ -36,7 +27,7 @@ export const MobileNav = () => {
         <SheetContent side="left" className="flex flex-col">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <Link href="/" className="flex items-center gap-2 font-semibold">
-              <Package2 className="h-6 w-6" />
+              <Flower className="h-6 w-6" />
               <span className="">TaskFlow</span>
             </Link>
             <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
@@ -66,8 +57,8 @@ export const MobileNav = () => {
               <CardHeader>
                 <CardTitle>Upgrade to Pro</CardTitle>
                 <CardDescription>
-                  Unlock all features and get unlimited access to our support
-                  team.
+                  Unlock all features and get unlimited access to personalized
+                  task sorting
                 </CardDescription>
               </CardHeader>
               <CardContent>
