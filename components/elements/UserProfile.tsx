@@ -1,5 +1,5 @@
-import { auth } from '@/auth';
-import { useSession, SessionProvider } from 'next-auth/react';
+// import { auth } from '@/auth';
+// import { useSession, SessionProvider } from 'next-auth/react';
 import Image from 'next/image';
 import React from 'react';
 
