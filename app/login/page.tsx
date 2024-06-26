@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-import LoginPhoto from "../../public/images/trees-login.jpg"
+// import LoginPhoto from "../../public/images/trees-login.jpg"
 
 // Icon import
 import AppleIcon from "../../public/svg/icons/AppleIcon";

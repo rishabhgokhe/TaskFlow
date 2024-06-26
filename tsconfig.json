@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/generateJwtToken.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/generateJwtToken.js", "middleware/isAuthenticated.js", "lib/saveCookies.ts"],
   "exclude": ["node_modules"]
 }

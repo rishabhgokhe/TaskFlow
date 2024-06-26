@@ -1,7 +1,7 @@
-"use server"
+// "use server"
 
-import { signIn } from "@/auth"
+// import { signIn } from "@/auth"
 
-export async function SignInAction() {
-    await signIn("apple", {redirectTo: "/loggedin"})
-}
+// export async function SignInAction() {
+//     await signIn("apple", {redirectTo: "/loggedin"})
+// }
