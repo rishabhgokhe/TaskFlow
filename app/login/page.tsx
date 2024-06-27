@@ -13,25 +13,25 @@ import { Label } from "@/components/ui/label";
 // Icon import
 import AppleIcon from "../../public/svg/icons/AppleIcon";
 import GoogleIcon from "../../public/svg/icons/GoogleIcon";
+import { UserContext } from "@/context/User/UserContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const {user, setUser} = useContext(UserContext)
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
     try {
       const responce = await axios.post("/api/auth/login", { email, password });
       const data = await responce.data;
-      const userData = await responce.data[0];
-
-      console.log(userData);
       console.log(data);
       console.log(data.message);
       console.log(data.success);
 
       if (!data.success) {
         toast.error(data.message);
+        // setUser(data.user)
       } else {
         toast.success(data.message);
       }

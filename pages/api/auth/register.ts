@@ -23,7 +23,11 @@ const registerUser = catchAsyncError(
 
     const token = generateJWTToken(user._id);
     saveCookie(res, token, true);
-    handleRes(res, 200, true, "Registered Successfully");
+    res.status(200).json({
+      success: true,
+      message: "Registered Successfully",
+      user
+    })
   }
 );
 

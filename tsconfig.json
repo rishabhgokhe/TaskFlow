@@ -29,9 +29,10 @@
     "lib/generateJwtToken.js",
     "middleware/isAuthenticated.js",
     "lib/saveCookies.ts",
-    "lib/contextProvider.js",
+    "context/User/UserContextProvider.tsx",
     "app/login/page.tsx",
-    "app/layout.jsx"
+    "app/layout.jsx",
+    "middleware/resHandler.ts"
   ],
   "exclude": ["node_modules"]
 }

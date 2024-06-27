@@ -1,7 +1,9 @@
 import { Toaster } from "react-hot-toast";
 
-export default function () {
+export default function Logout() {
   return (
-    <div></div>
+    <div>
+      <h1>Development under proceess...</h1>
+    </div>
   );
 }
