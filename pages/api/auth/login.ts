@@ -25,7 +25,7 @@ const logIn = catchAsyncError(
 
     const token = generateJWTToken(user._id);
     saveCookie(res, token, true);
-    handleRes(res, 200, true, "Logged In Successfully");
+    handleRes(res, 200, true, `Welcome back ${user.name}`, user);
   }
 );
 export default logIn;

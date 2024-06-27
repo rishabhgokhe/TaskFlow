@@ -1,23 +1,23 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.scss";
+import { Toaster } from "react-hot-toast"
+
+import { ContextProvider } from "@/lib/contextProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "TaskFlow",
   description: "Organising WorkFlow",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}</body>
+          {children}
+          <Toaster />
+      </body>
     </html>
   );
 }
