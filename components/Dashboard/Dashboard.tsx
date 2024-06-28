@@ -1,5 +1,5 @@
 // Icon Import
-import SideBar from "./SideBar";
+import SideBar from "./SideBar/SideBar";
 import TaskList from "./TaskList";
 import SearchAreaWithAvatarDropdown from "./SearchAreaWithAvatarDropdown";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Bell, Flower, Menu } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import Link from "next/link";
 import {
   Card,
@@ -9,10 +9,11 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
-import { Badge } from "../ui/badge";
-import { SideBarList } from "@/lib/SideBarData";
-import ThemeToggle from "../ui/themeToggle";
+} from "../../ui/card";
+import { Badge } from "../../ui/badge";
+import { SideBarList, customListItems } from "@/lib/Data";
+import ThemeToggle from "../../ui/themeToggle";
+import { SideBarItems } from "./SideBarItems";
 
 export const MobileNav = () => {
   return (
@@ -36,21 +37,11 @@ export const MobileNav = () => {
             </Button>
             <ThemeToggle />
           </div>
-          <nav className="grid gap-2 text-lg font-medium">
-            {SideBarList.map(({ name, icon }, id) => (
-              <Link
-                key={id}
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary"
-              >
-                {icon} {name}
-                {name === "Today" || name === "Scheduled" ? (
-                  <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                    10
-                  </Badge>
-                ) : null}
-              </Link>
-            ))}
+          <nav className="grid gap-1 text-lg font-medium">
+            <SideBarItems
+              SideBarList={SideBarList}
+              CustomListItems={customListItems}
+            />
           </nav>
           <div className="mt-auto">
             <Card>

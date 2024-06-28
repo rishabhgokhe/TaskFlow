@@ -7,9 +7,11 @@ export function handleRes(
   message?: string,
   ...props: Record<string, any>[]
 ) {
-  res.status(status).json({
-    success: success,
-    message: message,
+  const responseBody = {
+    success: success ?? false,
+    message: message ?? "Unknown error occurred",
     ...props
-  });
+  };
+
+  return res.status(status).json(responseBody);
 }

@@ -1,12 +1,13 @@
 import { Bell, CirclePlus, Flower } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { Button } from "../ui/button";
-import ThemeToggle from "../ui/themeToggle";
-import { SideBarList } from "@/lib/SideBarData";
-import { Badge } from "../ui/badge";
-import { Separator } from "../ui/separator";
+import { Button } from "../../ui/button";
+import ThemeToggle from "../../ui/themeToggle";
+import { SideBarList, customListItems } from "@/lib/Data";
+import { Badge } from "../../ui/badge";
+import { Separator } from "../../ui/separator";
 import ImportantLinks from "./ImportantLinks";
+import { SideBarItems } from "./SideBarItems";
 
 export default function SideBar() {
   return (
@@ -25,24 +26,11 @@ export default function SideBar() {
         </div>
         <div className="flex-1">
           <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-            {SideBarList.map(({ name, icon }, id) => (
-              <Link
-                key={id}
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary"
-              >
-                {icon} {name}
-                {name === "Today" || name === "Scheduled" ? (
-                  <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                    10
-                  </Badge>
-                ) : null}
-              </Link>
-            ))}
-            <Separator />
-            <Button className="mt-2 py-2" variant={"outline"}>
-              Create Custom list <CirclePlus className="mx-2 w-5 h-5" />
-            </Button>
+            {/* // all sidebar items */}
+            <SideBarItems
+              SideBarList={SideBarList}
+              CustomListItems={customListItems}
+            />
           </nav>
         </div>
 
@@ -51,4 +39,4 @@ export default function SideBar() {
       </div>
     </div>
   );
-};
+}

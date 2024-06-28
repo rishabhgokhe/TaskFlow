@@ -16,7 +16,7 @@ const registerUser = catchAsyncError(
 
     await connectDB();
     let user = await User.findOne({email});
-    if (user) return handleRes(res, 400, false, "Email already Registered Try Login..");
+    if (user) return handleRes(res, 200, true, "Email already Registered Try Login..");
 
     const hashedPassword = await bcrypt.hash(password, 10);
     user = await User.create({name, email, password: hashedPassword});
