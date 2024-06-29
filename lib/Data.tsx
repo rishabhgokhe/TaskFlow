@@ -9,6 +9,7 @@ import UserGroupIcon from "@/public/svg/icons/UserGroupIcon";
 import ShoppingBasket03Icon from "@/public/svg/icons/ShoppingBasket03Icon";
 import StudyLampIcon from "@/public/svg/icons/StudyLampIcon";
 import WorkUpdateIcon from "@/public/svg/icons/WorkUpdateIcon";
+import VegetarianFoodIcon from "@/public/svg/icons/VegetarianFoodIcon";
 
 export const SideBarList = [
   {
@@ -33,7 +34,12 @@ export const SideBarList = [
   },
 ];
 
-export const customListItems = [
+export const listNames = [
+  {
+    name: "Default",
+    link: "/list/default",
+    icon: <InboxIcon className="w-5 h-5" />,
+  },
   {
     name: "Personal",
     link: "/list/personal",
@@ -45,18 +51,29 @@ export const customListItems = [
     icon: <UserGroupIcon className="w-5 h-5" />,
   },
   {
-    name: "Groceries",
-    link: "/list/groceries",
+    name: "Shopping",
+    link: "/list/shopping",
     icon: <ShoppingBasket03Icon className="w-5 h-5" />,
   },
   {
-    name: "Acadmeics",
-    link: "/link/acadmeics",
+    name: "Groceries",
+    link: "/list/groceries",
+    icon: <VegetarianFoodIcon className="w-5 h-5" />,
+  },
+  {
+    name: "Academics",
+    link: "/list/academics",
     icon: <StudyLampIcon className="w-5 h-5" />,
   },
   {
-    name: "Works",
-    link: "/link/works",
+    name: "Work",
+    link: "/list/work",
     icon: <WorkUpdateIcon className="w-5 h-5" />,
   },
+];
+
+export const tasks = [
+  { id: 1, title: "Buy some coffee" },
+  { id: 2, title: "Pay Electricity bill" },
+  { id: 3, title: "Call President for approval" },
 ];

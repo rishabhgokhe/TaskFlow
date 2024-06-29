@@ -8,7 +8,7 @@ export function AddTaskButton() {
   const [showTaskButton, setShowTaskButton] = useState(false);
 
   return showTaskButton ? (
-    <AddTaskInlineModal />
+    <AddTaskInlineModal handleCloseModal={() => setShowTaskButton(false)} />
   ) : (
     <AddTaskButtonComponent onClickHandler={() => setShowTaskButton(true)} />
   );

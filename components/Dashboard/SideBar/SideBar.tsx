@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "../../ui/button";
 import ThemeToggle from "../../ui/themeToggle";
-import { SideBarList, customListItems } from "@/lib/Data";
+import { SideBarList, listNames } from "@/lib/Data";
 import { Badge } from "../../ui/badge";
 import { Separator } from "../../ui/separator";
 import ImportantLinks from "./ImportantLinks";
@@ -29,7 +29,7 @@ export default function SideBar() {
             {/* // all sidebar items */}
             <SideBarItems
               SideBarList={SideBarList}
-              CustomListItems={customListItems}
+              listNames={listNames}
             />
           </nav>
         </div>

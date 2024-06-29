@@ -15,10 +15,12 @@ export default function UserContextProvider({ children }: ContextProviderProps) 
 
   useEffect(() => {
     const fetchUserProfile = async () => {
+      console.log("Hiii i am rishabh");
+      
       try {
         const response = await axios.get("/api/profile");
         const data = response.data;
-        console.log(data);
+        console.log(data.name);
 
         if (data.success) {
           setUser(data.user);

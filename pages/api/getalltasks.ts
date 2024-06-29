@@ -4,6 +4,7 @@ import Task from "@/models/taskModel";
 import { handleRes } from "@/middleware/resHandler";
 import { catchAsyncError } from "@/middleware/catchAsyncError";
 import isAuthenticated from "@/middleware/isAuthenticated";
+import { tasks } from "@/lib/Data";
 
 
 const getAllTasks = catchAsyncError(async (req: NextApiRequest, res: NextApiResponse) => {
@@ -15,12 +16,6 @@ const getAllTasks = catchAsyncError(async (req: NextApiRequest, res: NextApiResp
     // const userId =  user._id
 
     // const tasks = await Task.find({user: userId});
-    const tasks = [
-      { id: 1, title: "Buy some coffee" },
-      { id: 2, title: "Pay Electricity bill" },
-      { id: 3, title: "Call President for approval" },
-    ]
-    
     handleRes(res, 200, true, "Fetched all tasks", tasks);
 });
 

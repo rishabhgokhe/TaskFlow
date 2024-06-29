@@ -17,11 +17,13 @@ const logIn = catchAsyncError(
 
     await connectDB();
 
-    const user = await User.findOne({email}).select("+password");
-    if (!user) return handleRes(res, 400, false, "Invalid email or password");
+    const userWithPassword = await User.findOne({email}).select("+password");
+    if (!userWithPassword) return handleRes(res, 400, false, "Invalid email or password");
 
-    const passwordMatched = await bcrypt.compare(password, user.password);
+    const passwordMatched = await bcrypt.compare(password, userWithPassword.password);
     if (!passwordMatched) return handleRes(res, 400, false, "Invalid email or password");
+
+    const user = await User.findOne({email})
 
     const token = generateJWTToken(user._id);
     saveCookie(res, token, true);

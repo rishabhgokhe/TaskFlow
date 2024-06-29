@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "../../ui/card";
 import { Badge } from "../../ui/badge";
-import { SideBarList, customListItems } from "@/lib/Data";
+import { SideBarList, listNames } from "@/lib/Data";
 import ThemeToggle from "../../ui/themeToggle";
 import { SideBarItems } from "./SideBarItems";
 
@@ -25,7 +25,7 @@ export const MobileNav = () => {
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="flex flex-col">
+        <SheetContent side="left" className="flex flex-col overflow-x-scroll">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <Link href="/" className="flex items-center gap-2 font-semibold">
               <Flower className="h-6 w-6" />
@@ -40,7 +40,7 @@ export const MobileNav = () => {
           <nav className="grid gap-1 text-lg font-medium">
             <SideBarItems
               SideBarList={SideBarList}
-              CustomListItems={customListItems}
+              listNames={listNames}
             />
           </nav>
           <div className="mt-auto">

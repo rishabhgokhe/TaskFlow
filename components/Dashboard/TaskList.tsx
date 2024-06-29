@@ -7,12 +7,15 @@ import { Task } from "@/types";
 import { Skeleton } from "../ui/skeleton";
 
 import TickDouble03Icon from "@/public/svg/icons/TickDouble03Icon";
+import PencilEdit02Icon from "@/public/svg/icons/PencilEdit02Icon";
 import { AddTaskButton } from "./Add Task Button/AddTaskButton";
+import { Button } from "../ui/button";
 
 // --------------------------------------------------------------------------------------
 export default function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [edit, setEdit] = useState<boolean>(false);
 
   useEffect(() => {
     async function getAllTasks() {
@@ -20,6 +23,7 @@ export default function TaskList() {
         const response = await axios.get("/api/getalltasks");
         const tasks = response.data[0];
         setTasks(tasks);
+        toast.success(response.data.message)
       } catch (err) {
         console.log(err);
         toast.error("Failed fetching tasks. Try refreshing the page.");
@@ -27,44 +31,54 @@ export default function TaskList() {
         setLoading(false);
       }
     }
-
     getAllTasks();
   }, []);
 
   return (
     <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
-      <div className="flex items-center">
+      <div className="flex items-center justify-between">
         <h1 className="text-lg font-semibold md:text-2xl">All Tasks</h1>
+        <Button
+          onClick={() => setEdit(!edit)}
+          size="sm"
+          variant={edit ? "outline" : "default"}
+        >
+          {edit ? "Done" : "Edit"}
+        </Button>
       </div>
 
       {/* // Incompleted Tasks */}
-      <div className="flex flex-col gap-4 p-4 border rounded-lg border-dashed shadow-sm">
+      <div className="flex flex-col py-4 px-2 border rounded-lg border-dashed shadow-sm">
         {loading ? (
           <TaskItemsSkeleton task={tasks} />
         ) : (
           <>
             {tasks.length > 0 ? (
               tasks.map(({ title, id }) => (
-                <TaskItem key={id} taskTitle={title} />
+                <div className="flex" key={id}>
+                  <TaskItem taskTitle={title} edit={edit} />
+                </div>
               ))
             ) : (
               <p>No tasks available</p>
             )}
           </>
         )}
-        <AddTaskButton />
+        <div className="px-1 mt-1">
+          <AddTaskButton />
+        </div>
       </div>
 
       {/* // Completed Tasks */}
       <h6 className="font-semibold mb-0">Completed Tasks</h6>
-      <div className="flex flex-col gap-4 p-4 border rounded-lg border-dashed shadow-sm">
+      <div className="flex flex-col py-4 px-2 border rounded-lg border-dashed shadow-sm">
         {loading ? (
           <TaskItemsSkeleton task={tasks} />
         ) : (
           <>
             {tasks.length > 0 ? (
               tasks.map(({ title, id }) => (
-                <TaskItem key={id} taskTitle={title} />
+                <TaskItem key={id} taskTitle={title} edit={false} />
               ))
             ) : (
               <p>No tasks available</p>
@@ -83,11 +97,8 @@ export default function TaskList() {
 
 // --------------------------------------------------------------------------------------
 
-interface TaskItemProps {
-  taskTitle: string;
-}
 
-function TaskItem({ taskTitle }: TaskItemProps) {
+function TaskItem({taskTitle, edit}: { taskTitle: string; edit: boolean; }) {
   const [checked, setChecked] = useState(false);
 
   const handleCheckboxChange = () => {
@@ -95,18 +106,21 @@ function TaskItem({ taskTitle }: TaskItemProps) {
   };
 
   return (
-    <div className="flex items-center space-x-2 w-full">
-      <Checkbox
-        id={taskTitle}
-        checked={checked}
-        onCheckedChange={handleCheckboxChange}
-      />
-      <label
-        htmlFor={taskTitle}
-        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-      >
-        {taskTitle}
-      </label>
+    <div className="flex px-2 items-center justify-between space-x-2 w-full hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-lg transition duration-300 ease-in-out">
+      <div className="flex items-center">
+        <Checkbox
+          id={taskTitle}
+          checked={checked}
+          onCheckedChange={handleCheckboxChange}
+        />
+        <label
+          htmlFor={taskTitle}
+          className="text-sm font-medium p-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          {taskTitle}
+        </label>
+      </div>
+      {edit ? (<button><PencilEdit02Icon /></button>) : null}
     </div>
   );
 }
