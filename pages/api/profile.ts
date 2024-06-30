@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import connectDB from "../../lib/connectDB";
-import Task from "@/models/taskModel";
 import { handleRes } from "@/middleware/resHandler";
 import { catchAsyncError } from "@/middleware/catchAsyncError";
 import isAuthenticated from "@/middleware/isAuthenticated";
