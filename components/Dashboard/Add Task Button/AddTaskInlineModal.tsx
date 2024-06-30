@@ -107,7 +107,7 @@ export function AddTaskInlineModal({handleCloseModal} : AddTaskInlineModalProps)
                     <FormControl>
                       <Button
                         variant="outline"
-                        className={cn("w-[240px] pl-3 text-left font-normal", !field.value && "text-muted-foreground")}
+                        className={cn("min-w-[150px] pl-3 text-left font-normal", !field.value && "text-muted-foreground")}
                       >
                         {field.value ? format(field.value, "PPP") : <span>Pick a date</span>}
                         <CalendarUpload01Icon className="ml-auto h-4 w-4 opacity-50" />
@@ -136,7 +136,7 @@ export function AddTaskInlineModal({handleCloseModal} : AddTaskInlineModalProps)
               <FormItem>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger className="ring-inset w-[300px]">
+                    <SelectTrigger className="ring-inset min-w-[150px]">
                       <SelectValue placeholder="Select a List" />
                     </SelectTrigger>
                   </FormControl>
