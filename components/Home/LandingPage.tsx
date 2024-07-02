@@ -11,7 +11,7 @@ export default function LandingPage() {
   return (
     <main className="flex flex-col justify-center items-center min-h-screen p-4">
       <div className="flex w-full justify-between items-center pb-1">
-        <h1 className="font-bold text-xl sm:text-3xl mb-4 text-center flex-1">
+        <h1 className="font-bold text-xl sm:text-3xl sm:pl-10 mb-4 text-center flex-1">
           Welcome to TaskFlow
         </h1>
         <GradientBorderButton link="/login" name="Login" />
@@ -19,6 +19,7 @@ export default function LandingPage() {
       </div>
 
       <SparkleTextComponent />
+
 
       <p className="mb-4 mt-3">
         Homepage is under development... visit our dashboard and login page
@@ -37,8 +38,8 @@ export default function LandingPage() {
 
       <ScrollPhotoComponent />
       <BentoGridComponent />
-      {/* <BackgorundGrid /> */}
       <VortexComponent />
     </main>
+    
   );
 }

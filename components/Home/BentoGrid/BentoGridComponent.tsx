@@ -4,13 +4,6 @@ import React from "react";
 import { BentoGrid, BentoGridItem } from "../BentoGrid/BentoGridCode";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import {
-  BoxSelectIcon,
-  ClipboardCopy,
-  FileBarChart2,
-  SignpostBigIcon,
-  TableColumnsSplitIcon,
-} from "lucide-react";
 
 import GroupLayersIcon from "@/public/svg/icons/GroupLayersIcon"
 import AiMagicIcon from "@/public/svg/icons/AiMagicIcon"
@@ -21,6 +14,7 @@ import BorderHorizontalIcon from "@/public/svg/icons/BorderHorizontalIcon"
 import QuotesImg from "@/public/images/quotes.png";
 import SecretIconImg from "@/public/images/secrets_icon.png";
 import BlackHoleImg from "@/public/images/black_hole.png"
+import CustomListImg from "@/public/images/custom_list.png"
 
 export function BentoGridComponent() {
   return (
@@ -135,21 +129,23 @@ const SkeletonTwo = () => {
       initial="initial"
       animate="animate"
       whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-3 p-4"
     >
       {arr.map((_, i) => (
         <motion.div
-          key={"skelenton-two" + i}
+          key={"skeleton-two" + i}
           variants={variants}
           style={{
             maxWidth: Math.random() * (100 - 40) + 40 + "%",
           }}
-          className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2  items-center space-x-2 bg-neutral-100 dark:bg-black w-full h-4"
+          className="flex rounded-full border border-emerald-300 dark:border-white/[0.2] p-2 items-center space-x-2 bg-neutral-100 dark:bg-black h-6 shadow-md"
         ></motion.div>
       ))}
     </motion.div>
   );
 };
+
+
 const SkeletonThree = () => {
   const variants = {
     initial: {
@@ -169,17 +165,25 @@ const SkeletonThree = () => {
         repeat: Infinity,
         repeatType: "reverse",
       }}
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] rounded-lg bg-dot-black/[0.2] flex-col space-y-2"
+      className="relative flex flex-1 w-full h-full min-h-[6rem] rounded-lg overflow-hidden"
       style={{
         background:
           "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
         backgroundSize: "400% 400%",
       }}
     >
-      <motion.div className="h-full w-full rounded-lg"></motion.div>
+      <motion.div className="absolute inset-0 flex items-center justify-center p-4">
+        <img 
+          src="/images/custom_list.png"
+          alt="Description" 
+          className="h-40 w-auto m-10 rounded-lg shadow-lg opacity-90"
+        />
+      </motion.div>
     </motion.div>
   );
 };
+
+
 const SkeletonFour = () => {
   const first = {
     initial: {
