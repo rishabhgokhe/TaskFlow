@@ -173,11 +173,11 @@ const SkeletonThree = () => {
       }}
     >
       <motion.div className="absolute inset-0 flex items-center justify-center p-4">
-        <img 
-          src="/images/custom_list.png"
-          alt="Description" 
-          className="h-40 w-auto m-10 rounded-lg shadow-lg opacity-90"
-        />
+      <Image
+      src={CustomListImg}
+      alt="Description"
+      className="h-40 w-auto m-10 rounded-lg shadow-lg opacity-90"
+    />
       </motion.div>
     </motion.div>
   );

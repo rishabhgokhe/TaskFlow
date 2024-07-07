@@ -11,6 +11,14 @@ import StudyLampIcon from "@/public/svg/icons/StudyLampIcon";
 import WorkUpdateIcon from "@/public/svg/icons/WorkUpdateIcon";
 import VegetarianFoodIcon from "@/public/svg/icons/VegetarianFoodIcon";
 
+import GithubIcon from "@/public/svg/icons/GithubIcon";
+import InstagramIcon from "@/public/svg/icons/InstagramIcon";
+import RedditIcon from "@/public/svg/icons/RedditIcon";
+import Linkedin01Icon from "@/public/svg/icons/Linkedin01Icon";
+import NewTwitterRectangleIcon from "@/public/svg/icons/NewTwitterRectangleIcon";
+
+import { date } from "zod";
+
 export const SideBarList = [
   {
     name: "Inbox",
@@ -33,6 +41,8 @@ export const SideBarList = [
     icon: <PreferenceHorizontalIcon className="w-5 h-5" />,
   },
 ];
+
+// ------------------------------------------------------------------------------------------------
 
 export const listNames = [
   {
@@ -72,12 +82,64 @@ export const listNames = [
   },
 ];
 
+// ------------------------------------------------------------------------------------------------
+
 export const tasks = [
-  { id: 1, title: "Buy some coffee" },
-  { id: 2, title: "Pay Electricity bill" },
-  { id: 3, title: "Call President for approval" },
+  {
+    id: 1,
+    title: "Buy some coffee",
+    description: "Buy a pack of Colombian coffee from the grocery store.",
+    list: "Groceries",
+    date: "Mon Jul 29 2024 16:13:56 GMT+0530 (India Standard Time)",
+  },
+  {
+    id: 2,
+    title: "Pay Electricity bill",
+    description: "Pay the monthly electricity bill online before the due date.",
+    list: "Family",
+    date: "Tue Jul 30 2024 16:13:56 GMT+0530 (India Standard Time)",
+  },
+  {
+    id: 3,
+    title: "Call President for approval",
+    description:
+      "Discuss the new project plan with the president and get the necessary approvals.",
+    list: "Work",
+    date: "Thu Jul 25 2024 16:13:56 GMT+0530 (India Standard Time)",
+  },
 ];
 
+// ------------------------------------------------------------------------------------------------
+
+export const iconLinkData = [
+  {
+    name: "Github",
+    link: "https://github.com/rishabhgokhe",
+    icon: <GithubIcon />
+  },
+  {
+    name: "Instagram",
+    link: "https://instagram.com/rishabh_gokhe?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr",
+    icon: <InstagramIcon />
+  },
+  {
+    name: "Reddit",
+    link: "https://www.reddit.com/u/DiscoversOther9152/s/kS20bBPbSF",
+    icon: <RedditIcon />
+  },
+  {
+    name: "Linkedin",
+    link: "https://www.linkedin.com/in/rishabh-gokhe-22168b287",
+    icon: <Linkedin01Icon />
+  },
+  {
+    name: "X / Twitter",
+    link: "https://twitter.com/rishabhgokhe?s=21&t=Flej6ro1R2UhXzVpOMJTdg",
+    icon: <NewTwitterRectangleIcon />
+  },
+]
+
+// ------------------------------------------------------------------------------------------------
 
 export const users = [
   {

@@ -5,11 +5,16 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Task } from "@/types";
 import { Skeleton } from "../ui/skeleton";
+import {
+  Dialog,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 import TickDouble03Icon from "@/public/svg/icons/TickDouble03Icon";
 import PencilEdit02Icon from "@/public/svg/icons/PencilEdit02Icon";
 import { AddTaskButton } from "./Add Task Button/AddTaskButton";
 import { Button } from "../ui/button";
+import { EditTaskDialogContent } from "./Add Task Button/EditTaskDialog";
 
 // --------------------------------------------------------------------------------------
 export default function TaskList() {
@@ -23,7 +28,7 @@ export default function TaskList() {
         const response = await axios.get("/api/getalltasks");
         const tasks = response.data[0];
         setTasks(tasks);
-        toast.success(response.data.message)
+        toast.success(response.data.message);
       } catch (err) {
         console.log(err);
         toast.error("Failed fetching tasks. Try refreshing the page.");
@@ -54,9 +59,9 @@ export default function TaskList() {
         ) : (
           <>
             {tasks.length > 0 ? (
-              tasks.map(({ title, id }) => (
+              tasks.map((task, id) => (
                 <div className="flex" key={id}>
-                  <TaskItem taskTitle={title} edit={edit} />
+                  <TaskItem key={id} task={task} edit={edit} />
                 </div>
               ))
             ) : (
@@ -77,8 +82,8 @@ export default function TaskList() {
         ) : (
           <>
             {tasks.length > 0 ? (
-              tasks.map(({ title, id }) => (
-                <TaskItem key={id} taskTitle={title} edit={false} />
+              tasks.map((task, id ) => (
+                <TaskItem key={id} task={task} edit={false} />
               ))
             ) : (
               <p>No tasks available</p>
@@ -97,8 +102,7 @@ export default function TaskList() {
 
 // --------------------------------------------------------------------------------------
 
-
-function TaskItem({taskTitle, edit}: { taskTitle: string; edit: boolean; }) {
+function TaskItem({ task, edit }: { task: Task; edit: boolean }) {
   const [checked, setChecked] = useState(false);
 
   const handleCheckboxChange = () => {
@@ -109,18 +113,27 @@ function TaskItem({taskTitle, edit}: { taskTitle: string; edit: boolean; }) {
     <div className="flex px-2 items-center justify-between space-x-2 w-full hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-lg transition duration-300 ease-in-out">
       <div className="flex items-center">
         <Checkbox
-          id={taskTitle}
+          id={task.id}
           checked={checked}
           onCheckedChange={handleCheckboxChange}
         />
         <label
-          htmlFor={taskTitle}
+          htmlFor={task.title}
           className="text-sm font-medium p-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
-          {taskTitle}
+          {task.title}
         </label>
       </div>
-      {edit ? (<button><PencilEdit02Icon /></button>) : null}
+      <Dialog>
+        <DialogTrigger asChild>
+          {edit ? (
+            <button>
+              <PencilEdit02Icon />
+            </button>
+          ) : null}
+        </DialogTrigger>
+        <EditTaskDialogContent task={task} />
+      </Dialog>
     </div>
   );
 }
@@ -138,10 +151,10 @@ function TaskItemsSkeleton({ task }: TaskItemsSkeletonProps) {
         task.map((item) => <Skeleton key={item.id} className="h-4 w-[200px]" />)
       ) : (
         <>
-          <Skeleton className="h-4 w-[250px]" />
-          <Skeleton className="h-4 w-[200px]" />
-          <Skeleton className="h-4 w-[250px]" />
-          <Skeleton className="h-4 w-[200px]" />
+          <Skeleton className="h-4 mb-2 w-[250px]" />
+          <Skeleton className="h-4 mb-2 w-[200px]" />
+          <Skeleton className="h-4 mb-2 w-[250px]" />
+          <Skeleton className="h-4 mb-2 w-[200px]" />
         </>
       )}
     </>

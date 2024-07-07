@@ -65,3 +65,27 @@
 html {
   scroll-behavior: smooth;
 }
+
+// portfolio button style
+@keyframes movingBackground {
+  0% {
+    background-position: 0% 20%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.portfolio-button {
+  background-image: linear-gradient(45deg, #ffafbd, #ffc3a0);
+  color: white;
+  animation: movingBackground 2s linear infinite;
+
+  &:hover {
+    background: rgb(0, 0, 0,0.6);
+    color: black;
+  }
+}

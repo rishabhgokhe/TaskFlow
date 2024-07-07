@@ -26,6 +26,9 @@ export type AnimationData = {
 export type Task = {
   id: string;
   title: string;
+  description: string;
+  list: string;
+  date: string
 }
 
 export type SideBarDataType = {
