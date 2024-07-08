@@ -12,8 +12,10 @@ import {
 } from "../../ui/card";
 import { Badge } from "../../ui/badge";
 import { SideBarList, listNames } from "@/lib/Data";
-import ThemeToggle from "../../ui/themeToggle";
+
 import { SideBarItems } from "./SideBarItems";
+import ThemeToggle from "@/components/elements/themeToggle";
+import NotificationButton from "@/components/elements/NotificationButton";
 
 export const MobileNav = () => {
   return (
@@ -31,10 +33,7 @@ export const MobileNav = () => {
               <Flower className="h-6 w-6" />
               <span className="">TaskFlow</span>
             </Link>
-            <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
-              <Bell className="h-4 w-4" />
-              <span className="sr-only">Toggle notifications</span>
-            </Button>
+            <NotificationButton />
             <ThemeToggle />
           </div>
           <nav className="grid gap-1 text-lg font-medium">

@@ -14,6 +14,9 @@ import {
 import { Button } from "../ui/button";
 import LogoutButton from "../elements/LogoutButton";
 import { useUserContext } from "@/context/User/UserContext";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+
+import UserCircleIcon from "@/public/svg/icons/UserCircleIcon"
 
 export default function SearchAreaWithAvatarDropdown() {
   const { user } = useUserContext();
@@ -35,10 +38,15 @@ export default function SearchAreaWithAvatarDropdown() {
       </div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
+
+          {/* Avatar Image */}
           <Button variant="secondary" size="icon" className="rounded-full">
-            <CircleUser className="h-5 w-5" />
-            <span className="sr-only">Toggle user menu</span>
+            <Avatar>
+              <AvatarImage src="https://avatars.githubusercontent.com/u/120303705?v=4" />
+              <AvatarFallback><UserCircleIcon /></AvatarFallback>
+            </Avatar>
           </Button>
+
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>

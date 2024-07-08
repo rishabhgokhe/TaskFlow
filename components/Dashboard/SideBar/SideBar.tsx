@@ -1,13 +1,12 @@
-import { Bell, CirclePlus, Flower } from "lucide-react";
+import { Flower } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { Button } from "../../ui/button";
-import ThemeToggle from "../../ui/themeToggle";
+
 import { SideBarList, listNames } from "@/lib/Data";
-import { Badge } from "../../ui/badge";
-import { Separator } from "../../ui/separator";
 import ImportantLinks from "./ImportantLinks";
 import { SideBarItems } from "./SideBarItems";
+import ThemeToggle from "@/components/elements/themeToggle";
+import NotificationButton from "@/components/elements/NotificationButton";
 
 export default function SideBar() {
   return (
@@ -18,19 +17,14 @@ export default function SideBar() {
             <Flower className="h-6 w-6" />
             TaskFlow
           </Link>
-          <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
-            <Bell className="h-4 w-4" />
-            <span className="sr-only">Toggle notifications</span>
-          </Button>
+
+          <NotificationButton />
           <ThemeToggle />
         </div>
         <div className="flex-1">
           <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
             {/* // all sidebar items */}
-            <SideBarItems
-              SideBarList={SideBarList}
-              listNames={listNames}
-            />
+            <SideBarItems SideBarList={SideBarList} listNames={listNames} />
           </nav>
         </div>
 

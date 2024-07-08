@@ -2,12 +2,12 @@ import React from "react";
 import { SparkleTextComponent } from "./SparkleText/SparkleTextComponent";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import GradientBorderButton from "../ui/GradientBorderButton";
+import GradientBorderButton from "../elements/GradientBorderButton";
 import { BentoGridComponent } from "./BentoGrid/BentoGridComponent";
 import { ScrollPhotoComponent } from "./ScrollPhoto/ScrollPhotoComponent";
 import { VortexComponent } from "./Vortex/VortexComponent";
 import Footer from "./Footer";
-import ThemeToggle from "../ui/themeToggle";
+import ThemeToggle from "../elements/themeToggle";
 
 export default function LandingPage() {
   return (
@@ -30,7 +30,7 @@ export default function LandingPage() {
       </p>
       <div className="flex gap-4">
         <Link href="/dashboard">
-          <Button>Dashboard</Button>
+          <Button >Dashboard</Button>
         </Link>
         <Link href="/login">
           <Button variant="outline">Login</Button>

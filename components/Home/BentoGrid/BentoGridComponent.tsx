@@ -1,20 +1,26 @@
 "use client";
 import { cn } from "@/lib/cn";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BentoGrid, BentoGridItem } from "../BentoGrid/BentoGridCode";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import GroupLayersIcon from "@/public/svg/icons/GroupLayersIcon"
-import AiMagicIcon from "@/public/svg/icons/AiMagicIcon"
-import AtomicPowerIcon from "@/public/svg/icons/AtomicPowerIcon"
-import ChartLineData02Icon from "@/public/svg/icons/ChartLineData02Icon"
-import BorderHorizontalIcon from "@/public/svg/icons/BorderHorizontalIcon"
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
+import GroupLayersIcon from "@/public/svg/icons/GroupLayersIcon";
+import AiMagicIcon from "@/public/svg/icons/AiMagicIcon";
+import AtomicPowerIcon from "@/public/svg/icons/AtomicPowerIcon";
+import ChartLineData02Icon from "@/public/svg/icons/ChartLineData02Icon";
+import BorderHorizontalIcon from "@/public/svg/icons/BorderHorizontalIcon";
 
 import QuotesImg from "@/public/images/quotes.png";
 import SecretIconImg from "@/public/images/secrets_icon.png";
-import BlackHoleImg from "@/public/images/black_hole.png"
-import CustomListImg from "@/public/images/custom_list.png"
+import BlackHoleImg from "@/public/images/black_hole.png";
+import CustomListImg from "@/public/images/custom_list.png";
+
+import bulbAnimatedSvg from "@/public/svg/animated/bulb.json";
+import { AnimationData } from "@/types";
 
 export function BentoGridComponent() {
   return (
@@ -106,6 +112,20 @@ const SkeletonOne = () => {
 };
 
 const SkeletonTwo = () => {
+
+  // set bulb svg source document not defined error
+  const [bulbSvg, setBulbSvg] = useState<AnimationData | null>(null);
+
+  useEffect(() => {
+    import("@/public/svg/animated/bulb.json").then((data) => {
+      setBulbSvg(data.default as AnimationData);
+    });
+  }, []);
+
+  if (!bulbSvg) {
+    return null;
+  }
+
   const variants = {
     initial: {
       width: 0,
@@ -129,9 +149,12 @@ const SkeletonTwo = () => {
       initial="initial"
       animate="animate"
       whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-3 p-4"
+      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-3 p-4 justify-center items-center"
     >
-      {arr.map((_, i) => (
+      <div className="flex justify-center items-center w-full h-full">
+        <Lottie animationData={bulbSvg} />
+      </div>
+      {/* {arr.map((_, i) => (
         <motion.div
           key={"skeleton-two" + i}
           variants={variants}
@@ -140,11 +163,10 @@ const SkeletonTwo = () => {
           }}
           className="flex rounded-full border border-emerald-300 dark:border-white/[0.2] p-2 items-center space-x-2 bg-neutral-100 dark:bg-black h-6 shadow-md"
         ></motion.div>
-      ))}
+      ))} */}
     </motion.div>
   );
 };
-
 
 const SkeletonThree = () => {
   const variants = {
@@ -173,16 +195,15 @@ const SkeletonThree = () => {
       }}
     >
       <motion.div className="absolute inset-0 flex items-center justify-center p-4">
-      <Image
-      src={CustomListImg}
-      alt="Description"
-      className="h-40 w-auto m-10 rounded-lg shadow-lg opacity-90"
-    />
+        <Image
+          src={CustomListImg}
+          alt="Description"
+          className="h-40 w-auto m-10 rounded-lg shadow-lg opacity-90"
+        />
       </motion.div>
     </motion.div>
   );
 };
-
 
 const SkeletonFour = () => {
   const first = {
@@ -224,10 +245,10 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-        Keep your tasks organized with TaskFlow.
+          Keep your tasks organized with TaskFlow.
         </p>
         <p className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
-        Productivity Boost
+          Productivity Boost
         </p>
       </motion.div>
       <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
@@ -239,10 +260,10 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-        Tailor your to-do lists to your needs.
+          Tailor your to-do lists to your needs.
         </p>
         <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
-        Customizable
+          Customizable
         </p>
       </motion.div>
       <motion.div
@@ -310,7 +331,9 @@ const SkeletonFive = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="text-xs text-neutral-500">
-        Effortlessly tailor your workflow with tasks and custom lists that perfectly suit your needs.</p>
+          Effortlessly tailor your workflow with tasks and custom lists that
+          perfectly suit your needs.
+        </p>
       </motion.div>
       <motion.div
         variants={variantsSecond}

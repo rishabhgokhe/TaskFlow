@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <UserContextProvider>
           {children}
-          <Toaster />
+          <Toaster position="top-right" />
         </UserContextProvider>
       </body>
     </html>

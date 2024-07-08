@@ -16,8 +16,10 @@ import InstagramIcon from "@/public/svg/icons/InstagramIcon";
 import RedditIcon from "@/public/svg/icons/RedditIcon";
 import Linkedin01Icon from "@/public/svg/icons/Linkedin01Icon";
 import NewTwitterRectangleIcon from "@/public/svg/icons/NewTwitterRectangleIcon";
+import MailAdd02Icon from "@/public/svg/icons/MailAdd02Icon";
 
 import { date } from "zod";
+import { link } from "fs";
 
 export const SideBarList = [
   {
@@ -115,29 +117,34 @@ export const iconLinkData = [
   {
     name: "Github",
     link: "https://github.com/rishabhgokhe",
-    icon: <GithubIcon />
+    icon: <GithubIcon />,
   },
   {
     name: "Instagram",
     link: "https://instagram.com/rishabh_gokhe?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr",
-    icon: <InstagramIcon />
+    icon: <InstagramIcon />,
   },
   {
     name: "Reddit",
     link: "https://www.reddit.com/u/DiscoversOther9152/s/kS20bBPbSF",
-    icon: <RedditIcon />
+    icon: <RedditIcon />,
   },
   {
     name: "Linkedin",
     link: "https://www.linkedin.com/in/rishabh-gokhe-22168b287",
-    icon: <Linkedin01Icon />
+    icon: <Linkedin01Icon />,
   },
   {
     name: "X / Twitter",
     link: "https://twitter.com/rishabhgokhe?s=21&t=Flej6ro1R2UhXzVpOMJTdg",
-    icon: <NewTwitterRectangleIcon />
+    icon: <NewTwitterRectangleIcon />,
   },
-]
+  {
+    name: "Mail Us",
+    link: `mailto:rishabhgokhe@gmail.com`,
+    icon: <MailAdd02Icon />,
+  },
+];
 
 // ------------------------------------------------------------------------------------------------
 
