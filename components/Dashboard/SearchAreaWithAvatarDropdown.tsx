@@ -30,7 +30,7 @@ export default function SearchAreaWithAvatarDropdown() {
             <Input
               type="search"
               placeholder="Search tasks..."
-              className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
+              className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3 ring-inset"
             />
             <h3 className="hidden md:block mx-auto font-semibold">{`Welcome back ${user?.name}`}</h3>
           </div>

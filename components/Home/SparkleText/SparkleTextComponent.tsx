@@ -1,12 +1,10 @@
 "use client";
 import React from "react";
 import { SparkleTextCode } from "./SparkleTextCode";
-import Image from "next/image";
-import image from "@/public/images/Abstract shape.png";
 
 export function SparkleTextComponent() {
   return (
-    <div className="h-[80vh] relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="h-[80vh] dark:shadow-xl dark:shadow-indigo-500/40  relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
       <div className="w-full absolute inset-0 h-screen">
         <SparkleTextCode
           id="tsparticlesfullpage"

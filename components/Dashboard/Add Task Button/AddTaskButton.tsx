@@ -27,12 +27,12 @@ export const AddTaskButtonComponent = ({
     <div className="flex">
       <Button
         size={"sm"}
-        className="mb-0 text-foreground/70"
+        className="mb-0 dark:text-[#CACACA]"
         variant={"outline"}
         onClick={onClickHandler}
       >
         <NoteAddIcon />
-        <p className="ml-1 text-base text-foreground/70">Add Task</p>
+        <p className="ml-1">Add Task</p>
       </Button>
     </div>
   );

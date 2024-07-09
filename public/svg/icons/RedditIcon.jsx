@@ -1,7 +1,7 @@
 import React from "react"; 
 
 const RedditIcon = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={32} height={32} color={"#4a4a4a"} fill={"none"} {...props}>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={32} height={32} color={"currentColor"} fill={"none"} {...props}>
     <ellipse cx="12" cy="15.5" rx="9" ry="6.5" stroke="currentColor" strokeWidth="1.5" />
     <path d="M15.5 16.7803C14.5149 17.548 13.3062 18.0002 12 18.0002C10.6938 18.0002 9.48512 17.548 8.5 16.7803" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     <circle cx="19" cy="4" r="2" stroke="currentColor" strokeWidth="1.5" />

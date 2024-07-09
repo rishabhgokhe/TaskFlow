@@ -18,8 +18,12 @@ import Linkedin01Icon from "@/public/svg/icons/Linkedin01Icon";
 import NewTwitterRectangleIcon from "@/public/svg/icons/NewTwitterRectangleIcon";
 import MailAdd02Icon from "@/public/svg/icons/MailAdd02Icon";
 
-import { date } from "zod";
-import { link } from "fs";
+import InformationCircleIcon from "@/public/svg/icons/InformationCircleIcon";
+import StickyNote02Icon from "@/public/svg/icons/StickyNote02Icon";
+import Coffee02Icon from "@/public/svg/icons/Coffee02Icon";
+import SecurityLockIcon from "@/public/svg/icons/SecurityLockIcon";
+import HelpCircleIcon from "@/public/svg/icons/HelpCircleIcon";
+
 
 export const SideBarList = [
   {
@@ -143,6 +147,36 @@ export const iconLinkData = [
     name: "Mail Us",
     link: `mailto:rishabhgokhe@gmail.com`,
     icon: <MailAdd02Icon />,
+  },
+];
+
+// ------------------------------------------------------------------------------------------------
+
+export const footerLinksData = [
+  {
+    name: "About Us",
+    link: "/about",
+    icon: <InformationCircleIcon />
+  },
+  {
+    name: "Release Note",
+    link: "/release-note",
+    icon: <StickyNote02Icon />
+  },
+  {
+    name: "Buy a Coffee",
+    link: "/buy-a-coffee",
+    icon: <Coffee02Icon />
+  },
+  {
+    name: "Privacy",
+    link: "/privacy",
+    icon: <SecurityLockIcon />
+  },
+  {
+    name: "Help",
+    link: "/help",
+    icon: <HelpCircleIcon />
   },
 ];
 

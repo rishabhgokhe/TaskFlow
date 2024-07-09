@@ -8,42 +8,40 @@ import { ScrollPhotoComponent } from "./ScrollPhoto/ScrollPhotoComponent";
 import { VortexComponent } from "./Vortex/VortexComponent";
 import Footer from "./Footer";
 import ThemeToggle from "../elements/themeToggle";
+import Banner from "../elements/Banner";
+
+import ArrowUpRight01Icon from "@/public/svg/icons/ArrowUpRight01Icon";
+import RenewableEnergyIcon from "@/public/svg/icons/RenewableEnergyIcon";
 
 export default function LandingPage() {
   return (
-    <main className="flex flex-col justify-center items-center min-h-screen p-4">
-      <div className="flex w-full flex-col sm:flex-row justify-between items-center pb-1">
-        <div className="sm:pb-3 hidden sm:block"><ThemeToggle /></div>
-        <h1 className="font-bold text-xl sm:text-3xl sm:pl-10 sm:mb-4 text-center flex-1">
-          Welcome to TaskFlow
-        </h1>
-        <div>
-          <GradientBorderButton link="/login" name="Login" />
-          <GradientBorderButton link="/signup" name="Register" />
+    <div>
+      <Banner />
+      <main className="flex flex-col justify-center items-center min-h-screen p-4">
+        <div className="flex w-full flex-col sm:flex-row justify-between items-center pb-1">
+          <div className="sm:pb-3 hidden sm:block fixed top-5 left-5 z-10">
+            <ThemeToggle />
+          </div>
+          <h1 className="font-bold text-xl sm:text-3xl sm:pl-10 sm:mb-4 text-center flex-1">
+            Welcome to TaskFlow
+          </h1>
+          <div className="hidden sm:block">
+            <GradientBorderButton link="/login" name="Login" icon={<ArrowUpRight01Icon />} />
+            <GradientBorderButton link="/signup" name="Register" icon={<RenewableEnergyIcon />} />
+          </div>
         </div>
-      </div>
 
-      <SparkleTextComponent />
+        <SparkleTextComponent />
+        <div className="sm:hidden flex w-full flex-row justify-center items-center pt-3 gap-5">
+          <GradientBorderButton link="/login" name="Login" icon={<ArrowUpRight01Icon />} />
+          <GradientBorderButton link="/signup" name="Register" icon={<RenewableEnergyIcon />} />
+        </div>
 
-      <p className="mb-4 mt-3">
-        Homepage is under development... visit our dashboard and login page
-      </p>
-      <div className="flex gap-4">
-        <Link href="/dashboard">
-          <Button >Dashboard</Button>
-        </Link>
-        <Link href="/login">
-          <Button variant="outline">Login</Button>
-        </Link>
-        <Link href="/signup">
-          <Button variant="outline">Sign Up</Button>
-        </Link>
-      </div>
-
-      <ScrollPhotoComponent />
-      <BentoGridComponent />
-      <VortexComponent />
-      <Footer />
-    </main>
+        <ScrollPhotoComponent />
+        <BentoGridComponent />
+        <VortexComponent />
+        <Footer />
+      </main>
+    </div>
   );
 }
