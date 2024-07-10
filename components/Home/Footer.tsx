@@ -45,11 +45,7 @@ export default function Footer() {
               <ToolTipIcon
                 key={id}
                 name={item.name}
-                triggerJsxElement={
-                  <li>
-                    <a href={item.link}>{item.icon}</a>
-                  </li>
-                }
+                triggerJsxElement={<a key={id} href={item.link}>{item.icon}</a>}
               />
             ))}
           </ul>
