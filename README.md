@@ -1,4 +1,4 @@
-![TaskFlow Banner](./public/images/TaskFlow Banner.png)
+![TaskFlow Banner](./public/images/TaskFlow%20Banner.png)
 
 # TaskFlow (To-Do List)
 
