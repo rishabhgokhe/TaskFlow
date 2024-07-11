@@ -1,3 +1,4 @@
+import { ToolTipIcon } from "@/components/elements/TootTipIcon";
 import {
   Accordion,
   AccordionContent,
@@ -9,9 +10,14 @@ export function TagsAccordian() {
   return (
     <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="tags">
-        <AccordionTrigger className="hover:no-underline p-2">
-          <h2 className="text-2xl">Tags</h2>
-        </AccordionTrigger>
+        <ToolTipIcon
+          name=" Click to view all Tags"
+          triggerJsxElement={
+            <AccordionTrigger className="hover:no-underline p-2">
+              <h2 className="text-2xl">Tags</h2>
+            </AccordionTrigger>
+          }
+        />
         <AccordionContent>
           <div className="grid grid-cols-3 gap-2 p-2">
             <div className="col-span-1">

@@ -24,7 +24,6 @@ import Coffee02Icon from "@/public/svg/icons/Coffee02Icon";
 import SecurityLockIcon from "@/public/svg/icons/SecurityLockIcon";
 import HelpCircleIcon from "@/public/svg/icons/HelpCircleIcon";
 
-
 export const SideBarList = [
   {
     name: "Inbox",
@@ -156,29 +155,83 @@ export const footerLinksData = [
   {
     name: "About Us",
     link: "/about",
-    icon: <InformationCircleIcon />
+    icon: <InformationCircleIcon />,
   },
   {
     name: "Release Note",
     link: "/release-note",
-    icon: <StickyNote02Icon />
+    icon: <StickyNote02Icon />,
   },
   {
     name: "Buy a Coffee",
     link: "/buy-a-coffee",
-    icon: <Coffee02Icon />
+    icon: <Coffee02Icon />,
   },
   {
     name: "Privacy",
     link: "/privacy",
-    icon: <SecurityLockIcon />
+    icon: <SecurityLockIcon />,
   },
   {
     name: "Help",
     link: "/help",
-    icon: <HelpCircleIcon />
+    icon: <HelpCircleIcon />,
   },
 ];
+
+// ------------------------------------------------------------------------------------------------
+export const aboutData = {
+  welcomeText:
+    "Welcome to TaskFlow, your ultimate solution for managing tasks efficiently and effectively. Our platform is designed to help you stay organized, prioritize your work, and achieve your goals seamlessly. Whether you are a professional looking to manage your projects or a student organizing your study schedule, TaskFlow has got you covered.",
+  founderText:
+    "Founded by Rishabh Gokhe, a passionate Full-Stack Developer and Computer Science and Engineering student, TaskFlow aims to revolutionize task management and productivity tools. With a deep commitment to technology and innovation, Rishabh's vision is to create a platform that empowers individuals to excel in the digital era.",
+  missionText:
+    "At TaskFlow, we believe in simplifying task management and enhancing productivity through intuitive tools and thoughtful design. Our mission is to empower individuals and teams to achieve more by providing a seamless and enjoyable task management experience.",
+  whatWeOffer: [
+    {
+      listTitle: "Comprehensive Task Management",
+      listDescription:
+        "From personal to team tasks, TaskFlow offers a robust suite of features to streamline your workflow.",
+    },
+    {
+      listTitle: "Flexible and Intuitive Interface",
+      listDescription:
+        "Customize TaskFlow to suit your unique needs and preferences, ensuring a smooth and efficient user experience.",
+    },
+    {
+      listTitle: "Collaborative Tools",
+      listDescription:
+        "Foster collaboration and communication with built-in tools that facilitate teamwork and project coordination.",
+    },
+    {
+      listTitle: "Continuous Innovation",
+      listDescription:
+        "We are committed to continuous improvement and innovation, incorporating user feedback to evolve and enhance TaskFlow continually.",
+    },
+  ],
+  values: [
+    {
+      listTitle: "Empowerment",
+      listDescription:
+        "Empowering individuals and teams to achieve their goals and maximize their potential.",
+    },
+    {
+      listTitle: "Innovation",
+      listDescription:
+        "Embracing innovation to create cutting-edge solutions that redefine task management.",
+    },
+    {
+      listTitle: "Accessibility",
+      listDescription:
+        "Ensuring accessibility and inclusivity in our platform to support diverse users worldwide.",
+    },
+    {
+      listTitle: "Quality",
+      listDescription:
+        "Committing to excellence by delivering high-quality, reliable, and user-friendly tools.",
+    },
+  ],
+};
 
 // ------------------------------------------------------------------------------------------------
 
