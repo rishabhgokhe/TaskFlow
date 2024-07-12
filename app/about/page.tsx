@@ -1,121 +1,162 @@
-import CustomLinkButton from "@/components/elements/CustomLinkButton";
-import ThemeToggle from "@/components/elements/themeToggle";
-import { ToolTipIcon } from "@/components/elements/TootTipIcon";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { aboutData, iconLinkData } from "@/lib/Data";
-import Link from "next/link";
+"use client";
+import PageTemplate from "@/components/elements/PageTemplate";
 import React from "react";
-
-import MailOpenIcon from "@/public/svg/icons/MailOpenIcon"
-import CircleArrowUpRightIcon from "@/public/svg/icons/CircleArrowUpRightIcon";
+import { motion } from "framer-motion";
+import CustomLinkButton from "@/components/elements/CustomLinkButton";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
+import { aboutData } from "@/lib/Data";
+import MailOpenIcon from "@/public/svg/icons/MailOpenIcon";
 import UserCircleIcon from "@/public/svg/icons/UserCircleIcon";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function About() {
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gradient-to-r from-[#63D471] to-[#233329] p-4 md:p-10 dark:bg-gradient-to-r dark:from-[#28313B] dark:to-[#485461]">
-      <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-lg p-4 md:p-10 max-w-5xl w-full text-center">
-        <ThemeToggle />
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 md:mb-6">
-          About Us
-        </h1>
-        <div className="flex flex-col items-center mb-4 md:mb-6">
+    <PageTemplate>
+      <motion.div
+        className="max-w-5xl mx-auto py-8 md:py-10 px-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.h1
+          className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 md:mb-6"
+          variants={itemVariants}
+        >
+          About <span className="text-red-500">Us</span>
+        </motion.h1>
+        <motion.div
+          className="flex flex-col items-center mb-4 md:mb-6"
+          variants={itemVariants}
+        >
           <Avatar className="w-28 md:w-40 h-28 md:h-40 mb-2 md:mb-4">
             <AvatarImage src="https://avatars.githubusercontent.com/u/120303705?v=4" />
             <AvatarFallback>
               <UserCircleIcon className="w-full h-full text-gray-300" />
             </AvatarFallback>
           </Avatar>
-          <div className="text-lg md:text-xl text-gray-800 dark:text-white font-semibold">
+          <motion.div
+            className="text-lg md:text-xl text-gray-800 dark:text-white font-semibold"
+            variants={itemVariants}
+          >
             Rishabh Gokhe
-          </div>
-          <div className="text-sm md:text-base text-gray-600 dark:text-gray-400">Founder</div>
-        </div>
-        <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6">
+          </motion.div>
+          <motion.div
+            className="text-sm md:text-base text-gray-600 dark:text-gray-400"
+            variants={itemVariants}
+          >
+            Founder
+          </motion.div>
+        </motion.div>
+        <motion.p
+          className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6"
+          variants={itemVariants}
+        >
           {aboutData.welcomeText}
-        </p>
-        <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6">
+        </motion.p>
+        <motion.p
+          className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6"
+          variants={itemVariants}
+        >
           {aboutData.founderText}
-        </p>
+        </motion.p>
         <div className="text-left">
-          <h2 className="text-lg md:text-2xl font-semibold text-gray-800 dark:text-white mb-2 md:mb-4">
+          <motion.h2
+            className="text-lg md:text-2xl font-semibold text-gray-800 dark:text-white mb-2 md:mb-4"
+            variants={itemVariants}
+          >
             Our Mission
-          </h2>
-          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6">
+          </motion.h2>
+          <motion.p
+            className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6"
+            variants={itemVariants}
+          >
             {aboutData.missionText}
-          </p>
-          <div className="flex justify-center items-center mb-2 sm:mb-0">
+          </motion.p>
+          <motion.div
+            className="flex justify-center items-center mb-2 sm:mb-0"
+            variants={itemVariants}
+          >
             <CustomLinkButton
               href="subscribe-newsletter"
               name="Subscribe to Newsletter"
               rightIcon={<MailOpenIcon />}
             />
-          </div>
-          <h2 className="text-lg md:text-2xl font-semibold text-gray-800 dark:text-white mb-2 md:mb-4">
+          </motion.div>
+          <motion.h2
+            className="text-lg md:text-2xl font-semibold text-gray-800 dark:text-white mb-2 md:mb-4"
+            variants={itemVariants}
+          >
             What We Offer
-          </h2>
-          <ul className="list-disc text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6">
+          </motion.h2>
+          <motion.ul
+            className="list-disc text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6"
+            variants={itemVariants}
+          >
             {aboutData.whatWeOffer.map((item, id) => (
-              <li key={id} className="mb-2">
-                <span className="font-semibold">{item.listTitle} </span>:{" "}
+              <motion.li
+                key={id}
+                className="mb-2"
+                variants={itemVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <span className="font-semibold">{item.listTitle}</span>:{" "}
                 {item.listDescription}
-              </li>
+              </motion.li>
             ))}
-          </ul>
-          <h2 className="text-lg md:text-2xl font-semibold text-gray-800 dark:text-white mb-2 md:mb-4">
+          </motion.ul>
+          <motion.h2
+            className="text-lg md:text-2xl font-semibold text-gray-800 dark:text-white mb-2 md:mb-4"
+            variants={itemVariants}
+          >
             Our Values
-          </h2>
-          <ul className="list-disc text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6">
+          </motion.h2>
+          <motion.ul
+            className="list-disc text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6"
+            variants={itemVariants}
+          >
             {aboutData.values.map((item, id) => (
-              <li key={id} className="mb-2">
-                <span className="font-semibold">{item.listTitle} </span>:{" "}
+              <motion.li
+                key={id}
+                className="mb-2"
+                variants={itemVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <span className="font-semibold">{item.listTitle}</span>:{" "}
                 {item.listDescription}
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
           <Separator className="dark:bg-slate-700" />
-          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6">
+          <motion.p
+            className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6"
+            variants={itemVariants}
+          >
             Join us on our journey to transform task management and
             productivity. Whether you are a freelancer, entrepreneur, or part of
             a large organization, TaskFlow is here to empower you to achieve
             more.
-          </p>
-
-          <div className="flex flex-col-reverse justify-center sm:flex-row sm:space-x-4 items-center w-full sm:w-auto">
-            <ul className="flex gap-2 md:gap-4">
-              {iconLinkData.map((item, id) => (
-                <ToolTipIcon
-                  key={id}
-                  name={item.name}
-                  triggerJsxElement={
-                    <a key={id} href={item.link}>
-                      {item.icon}
-                    </a>
-                  }
-                />
-              ))}
-            </ul>
-
-            <Separator className="sm:hidden my-2 md:my-3 border-[#C8C8C8] dark:bg-neutral-700" />
-            <ToolTipIcon
-              name="Visit My Portfolio"
-              triggerJsxElement={
-                <Link href={"https://portfolio-rishabhgokhe.vercel.app/"}>
-                  <Button
-                    size={"sm"}
-                    className="portfolio-button gap-1 shadow-lg"
-                    variant={"outline"}
-                  >
-                    <CircleArrowUpRightIcon />
-                    Portfolio
-                  </Button>
-                </Link>
-              }
-            />
-          </div>
+          </motion.p>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </PageTemplate>
   );
 }

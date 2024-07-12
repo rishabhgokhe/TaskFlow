@@ -1,11 +1,8 @@
-import Link from "next/link";
 import React from "react";
-import { Button } from "../ui/button";
-import { footerLinksData, iconLinkData } from "@/lib/Data";
+import { footerLinksData} from "@/lib/Data";
 import { Separator } from "../ui/separator";
 
-import CircleArrowUpRightIcon from "@/public/svg/icons/CircleArrowUpRightIcon";
-import { ToolTipIcon } from "../elements/TootTipIcon";
+import FooterIconLink from "../elements/FooterIconLink";
 
 export default function Footer() {
   return (
@@ -39,34 +36,7 @@ export default function Footer() {
         Developed by Rishabh Gokhe
       </p> */}
 
-        <div className="flex flex-col-reverse sm:flex-row sm:space-x-4 items-center w-full sm:w-auto">
-          <ul className="flex gap-4">
-            {iconLinkData.map((item, id) => (
-              <ToolTipIcon
-                key={id}
-                name={item.name}
-                triggerJsxElement={<a key={id} href={item.link}>{item.icon}</a>}
-              />
-            ))}
-          </ul>
-
-          <Separator className="sm:hidden my-3 border-[#C8C8C8] dark:bg-neutral-700" />
-          <ToolTipIcon
-            name="Visit My Portfolio"
-            triggerJsxElement={
-              <Link href={"https://portfolio-rishabhgokhe.vercel.app/"}>
-                <Button
-                  size={"sm"}
-                  className="portfolio-button gap-1 shadow-lg"
-                  variant={"outline"}
-                >
-                  <CircleArrowUpRightIcon />
-                  Portfolio
-                </Button>
-              </Link>
-            }
-          />
-        </div>
+        <FooterIconLink />
       </div>
     </footer>
   );

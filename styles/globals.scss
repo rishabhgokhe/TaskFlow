@@ -106,12 +106,25 @@ html {
 }
 
 .portfolio-button {
-  background-image: linear-gradient(45deg, #ffafbd, #ffc3a0);
+  background-image: linear-gradient(45deg, #0F2027, #2C5364);
   color: white;
   animation: movingBackground 2s linear infinite;
 
   &:hover {
     background: rgb(0, 0, 0,0.6);
     color: black;
+  }
+}
+
+.buy-me-coffee-button {
+  background-image: linear-gradient(45deg, #0F2027, #2C5364);
+  color: white;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-image: linear-gradient(45deg, #ffffff, #ffffff);
+    color: white;
   }
 }
