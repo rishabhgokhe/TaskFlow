@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import Coffee01Icon from "@/public/svg/icons/Coffee01Icon";
 import BuyMeACoffeeBrandLogo from "@/public/svg/icons/BuyMeACoffeeBrandLogo";
 import { iconLinkData } from "@/lib/Data";
+import CustomLinkButton from "@/components/elements/CustomLinkButton";
+import { baseRedColor } from "@/lib/Colors";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -30,7 +32,7 @@ export default function SupportMe() {
   return (
     <PageTemplate>
       <motion.div
-        className="max-w-3xl mx-auto py-8 md:py-10 px-4"
+        className="max-w-3xl mx-auto py-5 px-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -46,7 +48,7 @@ export default function SupportMe() {
           className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-8"
           variants={itemVariants}
         >
-          Support <span className="text-red-500">Me</span>
+          Support <span className={`text-red-500`}>Me</span>
         </motion.h1>
         <motion.div
           className="text-gray-700 dark:text-gray-300 space-y-8"
@@ -56,7 +58,8 @@ export default function SupportMe() {
             className="text-base md:text-lg leading-relaxed mb-6"
             variants={itemVariants}
           >
-            Your support enables me to create valuable content and resources for free, helping people improve their productivity and organization.
+            Your support enables me to create valuable content and resources for
+            free, helping people improve their productivity and organization.
           </motion.p>
           <motion.h2
             className="text-lg md:text-xl font-semibold text-gray-800 dark:text-white mb-4"
@@ -78,7 +81,8 @@ export default function SupportMe() {
               className="text-base md:text-lg leading-relaxed"
               variants={itemVariants}
             >
-              Your support helps in covering website hosting costs and tools/software used for content creation.
+              Your support helps in covering website hosting costs and
+              tools/software used for content creation.
             </motion.li>
           </motion.ul>
           <Separator className="my-8 dark:bg-slate-700" />
@@ -93,17 +97,18 @@ export default function SupportMe() {
             className="border rounded-2xl p-2"
             variants={itemVariants}
           >
-            <motion.a
-              className="my-2 cursor-pointer inline-flex items-center justify-center px-6 py-3 text-lg font-medium leading-6 text-white bg-[#4CA053] rounded-lg shadow-md hover:bg-black hover:shadow-lg transform hover:-translate-y-1 transition ease-in-out duration-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4CA053]"
-              onClick={() =>
-                window.open("https://buymeacoffee.com/rishabhgokhe", "_blank")
-              }
-            >
-              <span className="mr-1">
-                <Coffee01Icon />
-              </span>{" "}
-              Buy me a coffee
-            </motion.a>
+            <motion.div>
+              <CustomLinkButton
+                onClick={() =>
+                  window.open("https://buymeacoffee.com/rishabhgokhe", "_blank")
+                }
+                leftIcon={<Coffee01Icon />}
+                className="mb-2"
+              >
+                Buy me a coffee
+              </CustomLinkButton>
+            </motion.div>
+
             <motion.p
               className="text-xs flex justify-center items-center gap-1"
               variants={itemVariants}

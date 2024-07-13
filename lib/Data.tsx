@@ -127,11 +127,11 @@ export const iconLinkData = [
     link: "https://instagram.com/rishabh_gokhe?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr",
     icon: <InstagramIcon />,
   },
-  {
-    name: "Reddit",
-    link: "https://www.reddit.com/u/DiscoversOther9152/s/kS20bBPbSF",
-    icon: <RedditIcon />,
-  },
+  // {
+  //   name: "Reddit",
+  //   link: "https://www.reddit.com/u/DiscoversOther9152/s/kS20bBPbSF",
+  //   icon: <RedditIcon />,
+  // },
   {
     name: "Linkedin",
     link: "https://www.linkedin.com/in/rishabh-gokhe-22168b287",
@@ -170,6 +170,11 @@ export const footerLinksData = [
   {
     name: "Terms and Condition",
     link: "/terms-and-condition",
+    icon: <SecurityLockIcon />,
+  },
+  {
+    name: "Feedback",
+    link: "/feedback",
     icon: <SecurityLockIcon />,
   },
   {
@@ -237,29 +242,48 @@ export const aboutData = {
 
 export const releaseNotesData = [
   {
+    version: "1.0.9",
+    date: "13-07-2024",
+    notes: [
+      "Fixed issue with Theme Tracking: Theme is now preserved when navigating through pages.",
+      "Added new Back Button and BackToTop Button to PageTemplate. Adjusted layout of Back Button and ThemeToggle.",
+      "Implemented ThemeProvider from next-theme to manage current theme state.",
+      "Resolved Buy me Coffee button hover issue in dark mode.",
+      "Enhanced CustomButton element to accept multiple props. Updated CustomLinkButton with new hover effect in dark mode.",
+      "Redesigned Login Page. Integrated PageTemplate layout into Login and SignUp Pages.",
+      "Linked newly created password generation code to Sign Up page.",
+      "Added new pages: Feedback, Forgot Password.",
+      "Added alert prompts to Feedback, Forgot Password, and Sign Up pages upon form submission.",
+      "Improved folder structure by creating a dedicated folder for frequently used animations.",
+    ],
+  },
+  {
     version: "1.0.8",
     date: "12-07-2024",
     notes: [
-      "Improved Design, Animation and added new Pages",
-      "Added About Us Page, added Buy me Coffee Page, added new Help Center Page, added Release Note Page, added Terms and Condition Page",
-      "Reloacted footer link elements and change its visual and added new buy me coffee button",
+      "Improved overall design and animations",
+      "Added new pages: About Us, Buy Me Coffee, Help Center, Release Notes, Terms and Conditions",
+      "Reorganized footer links with visual changes and added a new Buy Me Coffee button",
     ],
   },
   {
     version: "1.0.7",
     date: "11-07-2024",
     notes: [
-      "New About Us page added",
-      "Improved Not-found Page with new Design and customLinkButton element added to Not-found page and About Us",
-      "New banner in top and also improved footer",
+      "Added About Us page",
+      "Enhanced Not-found page with new design and added CustomLinkButton",
+      "Updated banner and improved footer",
     ],
   },
   {
     version: "1.0.6",
     date: "08-07-2024",
     notes: [
-      "New ToolTip feature added to required icons, Avatar Dashboard, Notification Popover, Changed second grid with animated svg in bento grid",
-      "New hot-toast position, improved Landing Page and Footer design",
+      "Introduced ToolTip feature for icons",
+      "Enhanced Avatar Dashboard and Notification Popover",
+      "Changed second grid with animated SVG in Bento Grid",
+      "Adjusted hot-toast position",
+      "Improved Landing Page and Footer design",
       "Added new dialog for edit task button and footer",
     ],
   },
@@ -267,17 +291,19 @@ export const releaseNotesData = [
     version: "1.0.5",
     date: "29-06-2024",
     notes: [
-      "Updated Dashboard Ui, added new edit button, Default list, Tags Section",
-      "Add Task Inline modal alignment fixed for small screen",
-      "deleted seperate DatePicker and SelectForm files",
+      "Updated Dashboard UI with new edit button and Default list in Tags Section",
+      "Improved Task Inline modal alignment for small screens",
+      "Removed separate DatePicker and SelectForm files",
     ],
   },
   {
     version: "1.0.4",
     date: "28-06-2024",
     notes: [
-      "Improved dashboard UI, Organized folder structure for dashboard component, New sign-up page",
-      "Created add task button with inline edit modal, New logout button",
+      "Revamped Dashboard UI and organized folder structure",
+      "Added sign-up page",
+      "Created add task button with inline edit modal",
+      "Introduced new logout button",
       "Connected login and dashboard with API",
     ],
   },
@@ -285,17 +311,18 @@ export const releaseNotesData = [
     version: "1.0.3",
     date: "27-06-2024",
     notes: [
-      "Added types files, loading animated SVG types, improved UI components of dashboard",
-      "Improved response handling from login and register API",
-      "Added reserved app files (not-found, loading)",
+      "Added types files for loading animated SVG types",
+      "Improved UI components of Dashboard",
+      "Enhanced response handling from login and register API",
+      "Added reserved app files: Not-found and Loading",
     ],
   },
   {
     version: "1.0.2",
     date: "26-06-2024",
     notes: [
-      "Added routes for gettasks, profile, new routes for login, logout, and register, improved models",
-      "Improved handleRes with extra object properties, created generateJwtToken, saveCookies, catchAsyncError, resHandler",
+      "Added routes for gettasks, profile, login, logout, and register",
+      "Enhanced models and response handling",
       "Removed next-auth package",
     ],
   },
@@ -303,9 +330,8 @@ export const releaseNotesData = [
     version: "1.0.1",
     date: "24-06-2024",
     notes: [
-      "Converted to Next.js application",
-      "Transformed code from JavaScript to TypeScript",
-      "Added dashboard page for managing tasks",
+      "Converted application to Next.js and TypeScript",
+      "Added Dashboard page for task management",
     ],
   },
   {
@@ -313,8 +339,8 @@ export const releaseNotesData = [
     date: "22-05-2024",
     notes: [
       "Initial release of TaskFlow",
-      "Added initial add task function",
-      "Application is made with EJS and JavaScript",
+      "Implemented add task function",
+      "Developed application with EJS and JavaScript",
     ],
   },
 ];

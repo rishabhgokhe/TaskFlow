@@ -10,6 +10,7 @@ import Banner from "../elements/Banner";
 
 import ArrowUpRight01Icon from "@/public/svg/icons/ArrowUpRight01Icon";
 import RenewableEnergyIcon from "@/public/svg/icons/RenewableEnergyIcon";
+import BackToTopButton from "../elements/BackToTopButton";
 
 export default function LandingPage() {
   return (
@@ -17,7 +18,7 @@ export default function LandingPage() {
       <Banner />
       <main className="flex flex-col justify-center items-center min-h-screen p-4">
         <div className="flex w-full flex-row justify-between items-center pb-1">
-          <div className="sm:pb-3 sm:fixed sm:top-5 sm:left-5 sm:z-10">
+          <div className="sm:pb-3 sm:top-5 sm:left-5 sm:z-10">
             <ThemeToggle />
           </div>
           <h1 className="font-bold text-xl mr-5 sm:m-0 sm:text-3xl sm:pl-10 sm:mb-4 text-center flex-1">
@@ -38,6 +39,7 @@ export default function LandingPage() {
         <ScrollPhotoComponent />
         <BentoGridComponent />
         <VortexComponent />
+        <BackToTopButton />
         <Footer />
       </main>
     </div>

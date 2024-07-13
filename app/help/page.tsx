@@ -25,7 +25,7 @@ export default function Help() {
 
   return (
     <PageTemplate>
-      <div className="max-w-3xl mx-auto py-8 md:py-10 px-4">
+      <div className="max-w-3xl mx-auto py-5 px-4">
         <motion.h1
           className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-8"
           initial={{ opacity: 0, y: -20 }}
@@ -106,7 +106,7 @@ export default function Help() {
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-gray-800 dark:text-white mb-0 hover:text-indigo-600 dark:hover:text-indigo-300 hover:no-underline">
+                    <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-gray-800 dark:text-white mb-0 hover:text-red-600 dark:hover:text-red-300 hover:no-underline">
                       {item.question}
                     </AccordionTrigger>
                   </motion.div>

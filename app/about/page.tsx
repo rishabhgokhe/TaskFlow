@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator";
 import { aboutData } from "@/lib/Data";
 import MailOpenIcon from "@/public/svg/icons/MailOpenIcon";
 import UserCircleIcon from "@/public/svg/icons/UserCircleIcon";
+import { baseRedColor } from "@/lib/Colors";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -30,7 +31,7 @@ export default function About() {
   return (
     <PageTemplate>
       <motion.div
-        className="max-w-5xl mx-auto py-8 md:py-10 px-4"
+        className="max-w-5xl mx-auto py-5 px-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -39,7 +40,7 @@ export default function About() {
           className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 md:mb-6"
           variants={itemVariants}
         >
-          About <span className="text-red-500">Us</span>
+          About <span className={`text-red-500`}>Us</span>
         </motion.h1>
         <motion.div
           className="flex flex-col items-center mb-4 md:mb-6"
@@ -95,9 +96,10 @@ export default function About() {
           >
             <CustomLinkButton
               href="subscribe-newsletter"
-              name="Subscribe to Newsletter"
               rightIcon={<MailOpenIcon />}
-            />
+            >
+              Subscribe to Newsletter
+            </CustomLinkButton>
           </motion.div>
           <motion.h2
             className="text-lg md:text-2xl font-semibold text-gray-800 dark:text-white mb-2 md:mb-4"

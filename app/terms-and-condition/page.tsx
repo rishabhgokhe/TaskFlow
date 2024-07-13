@@ -2,8 +2,7 @@
 import PageTemplate from "@/components/elements/PageTemplate";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { termsAndConditionData } from "@/lib/Data"; // Assuming TermsAndConditionData is the type of termsAndConditionData
-import React from "react";
+import { termsAndConditionData } from "@/lib/Data";
 import { motion } from "framer-motion";
 
 interface SectionProps {
@@ -42,7 +41,7 @@ export default function TermsAndCondition() {
   return (
     <PageTemplate>
       <motion.div
-        className="max-w-5xl mx-auto py-8 md:py-10 px-4"
+        className="max-w-5xl mx-auto py-5 px-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

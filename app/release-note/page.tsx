@@ -25,7 +25,7 @@ const itemVariants = {
 export default function ReleaseNote() {
   return (
     <PageTemplate>
-      <div className="max-w-5xl mx-auto py-8 md:py-10 px-4">
+      <div className="max-w-5xl mx-auto py-5 px-4">
         <motion.h1
           className="text-4xl font-bold text-gray-800 dark:text-white mb-8 text-center"
           initial={{ opacity: 0, y: -20 }}

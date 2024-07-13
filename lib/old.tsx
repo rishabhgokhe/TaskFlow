@@ -139,10 +139,9 @@ export function ReleaseNote() {
   );
 }
 
-
 import CustomLinkButton from "@/components/elements/CustomLinkButton";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { aboutData} from "@/lib/Data";
+import { aboutData } from "@/lib/Data";
 import MailOpenIcon from "@/public/svg/icons/MailOpenIcon";
 import UserCircleIcon from "@/public/svg/icons/UserCircleIcon";
 
@@ -183,9 +182,10 @@ export default function About() {
           <div className="flex justify-center items-center mb-2 sm:mb-0">
             <CustomLinkButton
               href="subscribe-newsletter"
-              name="Subscribe to Newsletter"
               rightIcon={<MailOpenIcon />}
-            />
+            >
+              Subscribe to Newsletter
+            </CustomLinkButton>
           </div>
           <h2 className="text-lg md:text-2xl font-semibold text-gray-800 dark:text-white mb-2 md:mb-4">
             What We Offer
@@ -331,7 +331,8 @@ export function SupportMe() {
         </h1>
         <div className="text-gray-700 dark:text-gray-300 space-y-8">
           <p className="text-base md:text-lg leading-relaxed mb-6">
-          Your support enables me to create valuable content and resources for free, helping people improve their productivity and organization.
+            Your support enables me to create valuable content and resources for
+            free, helping people improve their productivity and organization.
           </p>
           <h2 className="text-lg md:text-xl font-semibold text-gray-800 dark:text-white mb-4">
             How Can You Support?

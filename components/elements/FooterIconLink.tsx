@@ -57,7 +57,7 @@ export default function FooterIconLink() {
           triggerJsxElement={
             <Button
               size={"sm"}
-              className="buy-me-coffee-button gap-1 shadow-lg"
+              className="buy-me-coffee-button gap-1 shadow-lg dark:hover:bg-gradient-to-r from-[#281D24] to-[#281D24]"
               variant={"outline"}
               onClick={() =>
                 window.open("https://buymeacoffee.com/rishabhgokhe", "_blank")

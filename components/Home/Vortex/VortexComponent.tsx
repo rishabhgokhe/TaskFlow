@@ -1,10 +1,9 @@
 import React from "react";
 import { Vortex } from "./VortexCode";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import CustomButton from "@/components/elements/CustomButton";
 
 import MailEdit01Icon from "@/public/svg/icons/MailEdit01Icon";
-import AlertDiamondIcon from "@/public/svg/icons/AlertDiamondIcon";
 
 export function VortexComponent() {
   return (
@@ -25,12 +24,7 @@ export function VortexComponent() {
           placeholder="myemail@example.com"
         ></Input>
         <div className="flex sm:flex-row items-center gap-4 mt-6">
-          <Button variant="default" className="hover:bg-blue-500 hover:text-white transition duration-300">
-            <a href="/signup" className="mr-1">Join Now</a><MailEdit01Icon />
-          </Button>
-          <Button variant="outline" className="hover:bg-blue-500 hover:text-white transition duration-300">
-            <a href="/about" className="mr-1">Learn more</a><AlertDiamondIcon />
-          </Button>
+          <CustomButton rightIcon={<MailEdit01Icon />}>Join Now</CustomButton>
         </div>
       </Vortex>
     </div>
