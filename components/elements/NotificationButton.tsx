@@ -5,13 +5,14 @@ import { Bell } from "lucide-react";
 import { Separator } from "../ui/separator";
 
 import NotificationSnooze01Icon from "@/public/svg/icons/NotificationSnooze01Icon";
+import MessageNotification01Icon from "@/public/svg/icons/MessageNotification01Icon";
 
 export default function NotificationButton() {
   return (
     <Popover>
       <PopoverTrigger asChild>
         <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
-          <Bell className="h-4 w-4" />
+          <MessageNotification01Icon />
         </Button>
       </PopoverTrigger>
       <PopoverContent>

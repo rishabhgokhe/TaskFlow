@@ -4,8 +4,9 @@ import { Badge } from "../../ui/badge";
 import { Separator } from "../../ui/separator";
 import { Button } from "../../ui/button";
 import { SideBarDataType } from "@/types";
-import { CirclePlus } from "lucide-react";
 import { TagsAccordian } from "./TagsAccordian";
+
+import AddCircleIcon from "@/public/svg/icons/AddCircleIcon";
 
 export const SideBarItems = ({
   SideBarList,
@@ -63,7 +64,7 @@ export const SideBarItems = ({
         ))}
 
       <Button className="mb-2 py-2" variant={"outline"}>
-        Create Custom list <CirclePlus className="mx-2 w-5 h-5" />
+        Create Custom list <AddCircleIcon className="mx-1 w-5 h-5" />
       </Button>
       <Separator />
 

@@ -6,14 +6,13 @@ import PreferenceHorizontalIcon from "@/public/svg/icons/PreferenceHorizontalIco
 
 import ProfileIcon from "@/public/svg/icons/ProfileIcon";
 import UserGroupIcon from "@/public/svg/icons/UserGroupIcon";
-import ShoppingBasket03Icon from "@/public/svg/icons/ShoppingBasket03Icon";
+import ShoppingBasket02Icon from "@/public/svg/icons/ShoppingBasket02Icon";
 import StudyLampIcon from "@/public/svg/icons/StudyLampIcon";
 import WorkUpdateIcon from "@/public/svg/icons/WorkUpdateIcon";
 import VegetarianFoodIcon from "@/public/svg/icons/VegetarianFoodIcon";
 
 import GithubIcon from "@/public/svg/icons/GithubIcon";
 import InstagramIcon from "@/public/svg/icons/InstagramIcon";
-import RedditIcon from "@/public/svg/icons/RedditIcon";
 import Linkedin01Icon from "@/public/svg/icons/Linkedin01Icon";
 import NewTwitterRectangleIcon from "@/public/svg/icons/NewTwitterRectangleIcon";
 import MailAdd02Icon from "@/public/svg/icons/MailAdd02Icon";
@@ -23,6 +22,8 @@ import StickyNote02Icon from "@/public/svg/icons/StickyNote02Icon";
 import Coffee02Icon from "@/public/svg/icons/Coffee02Icon";
 import SecurityLockIcon from "@/public/svg/icons/SecurityLockIcon";
 import HelpCircleIcon from "@/public/svg/icons/HelpCircleIcon";
+import { title } from "process";
+import { color } from "framer-motion";
 
 export const SideBarList = [
   {
@@ -68,7 +69,7 @@ export const listNames = [
   {
     name: "Shopping",
     link: "/list/shopping",
-    icon: <ShoppingBasket03Icon className="w-5 h-5" />,
+    icon: <ShoppingBasket02Icon className="w-5 h-5" />,
   },
   {
     name: "Groceries",
@@ -240,10 +241,67 @@ export const aboutData = {
 
 // ------------------------------------------------------------------------------------------------
 
+export const upcomingFeatures = [
+  "We are working on an App for the iOS App Store.",
+  "Tasks added in TaskFlow can be directly viewed on Google Calendar.",
+  "Improving Dark Mode for a more comfortable viewing experience at night.",
+  "Receive smart notifications that remind you of upcoming deadlines and important tasks.",
+  "Set up recurring tasks to automate your routine activities.",
+  "Tag and filter tasks based on their priority levels.",
+];
+
+const updateBadgeData = {
+  major: {
+    title: "major",
+    color: "bg-orange-500",
+  },
+  minor: {
+    title: "minor",
+    color: "bg-amber-500",
+  },
+  bug: {
+    title: "bug fixes",
+    color: "bg-red-500",
+  },
+  feature: {
+    title: "new feature",
+    color: "bg-pink-500",
+  },
+  improvement: {
+    title: "improvement",
+    color: "bg-lime-500",
+  },
+  hotfix: {
+    title: "hotfix",
+    color: "bg-indigo-500",
+  },
+  performance: {
+    title: "performance",
+    color: "bg-purple-500",
+  },
+};
+
 export const releaseNotesData = [
+  {
+    version: "1.1.0",
+    date: "15-07-2024",
+    badge: {
+      title: updateBadgeData.minor.title,
+      color: updateBadgeData.minor.color,
+    },
+    notes: [
+      "Revamped icons to a new design with duotone visuals",
+      "adder drawer to release note version blocks with new dialog trigger and clamped version black lines to 6",
+      "new updage included with each version of new release"
+    ],
+  },
   {
     version: "1.0.9",
     date: "13-07-2024",
+    badge: {
+      title: `${updateBadgeData.major.title} | ${updateBadgeData.feature.title}`,
+      color: updateBadgeData.major.color,
+    },
     notes: [
       "Fixed issue with Theme Tracking: Theme is now preserved when navigating through pages.",
       "Added new Back Button and BackToTop Button to PageTemplate. Adjusted layout of Back Button and ThemeToggle.",
@@ -260,6 +318,10 @@ export const releaseNotesData = [
   {
     version: "1.0.8",
     date: "12-07-2024",
+    badge: {
+      title: updateBadgeData.improvement.title,
+      color: updateBadgeData.improvement.color,
+    },
     notes: [
       "Improved overall design and animations",
       "Added new pages: About Us, Buy Me Coffee, Help Center, Release Notes, Terms and Conditions",
@@ -269,6 +331,10 @@ export const releaseNotesData = [
   {
     version: "1.0.7",
     date: "11-07-2024",
+    badge: {
+      title: `${updateBadgeData.minor.title} | ${updateBadgeData.hotfix.title}`,
+      color: updateBadgeData.minor.color,
+    },
     notes: [
       "Added About Us page",
       "Enhanced Not-found page with new design and added CustomLinkButton",
@@ -278,18 +344,26 @@ export const releaseNotesData = [
   {
     version: "1.0.6",
     date: "08-07-2024",
+    badge: {
+      title: updateBadgeData.feature.title,
+      color: updateBadgeData.feature.color,
+    },
     notes: [
       "Introduced ToolTip feature for icons",
+      "Added new dialog for edit task button and footer",
+      "Improved Landing Page and Footer design",
       "Enhanced Avatar Dashboard and Notification Popover",
       "Changed second grid with animated SVG in Bento Grid",
       "Adjusted hot-toast position",
-      "Improved Landing Page and Footer design",
-      "Added new dialog for edit task button and footer",
     ],
   },
   {
     version: "1.0.5",
     date: "29-06-2024",
+    badge: {
+      title: `${updateBadgeData.bug.title} | ${updateBadgeData.improvement.title}`,
+      color: updateBadgeData.bug.color,
+    },
     notes: [
       "Updated Dashboard UI with new edit button and Default list in Tags Section",
       "Improved Task Inline modal alignment for small screens",
@@ -299,6 +373,10 @@ export const releaseNotesData = [
   {
     version: "1.0.4",
     date: "28-06-2024",
+    badge: {
+      title: `${updateBadgeData.major.title} | ${updateBadgeData.feature.title}`,
+      color: updateBadgeData.major.color,
+    },
     notes: [
       "Revamped Dashboard UI and organized folder structure",
       "Added sign-up page",
@@ -310,6 +388,10 @@ export const releaseNotesData = [
   {
     version: "1.0.3",
     date: "27-06-2024",
+    badge: {
+      title: `${updateBadgeData.performance.title} | ${updateBadgeData.improvement.title}`,
+      color: updateBadgeData.performance.color,
+    },
     notes: [
       "Added types files for loading animated SVG types",
       "Improved UI components of Dashboard",
@@ -320,6 +402,10 @@ export const releaseNotesData = [
   {
     version: "1.0.2",
     date: "26-06-2024",
+    badge: {
+      title: `${updateBadgeData.performance.title}`,
+      color: updateBadgeData.performance.color,
+    },
     notes: [
       "Added routes for gettasks, profile, login, logout, and register",
       "Enhanced models and response handling",
@@ -329,6 +415,10 @@ export const releaseNotesData = [
   {
     version: "1.0.1",
     date: "24-06-2024",
+    badge: {
+      title: `${updateBadgeData.major.title} | ${updateBadgeData.improvement.title}`,
+      color: updateBadgeData.major.color,
+    },
     notes: [
       "Converted application to Next.js and TypeScript",
       "Added Dashboard page for task management",
@@ -337,6 +427,10 @@ export const releaseNotesData = [
   {
     version: "1.0.0",
     date: "22-05-2024",
+    badge: {
+      title: `${updateBadgeData.major.title} | ${updateBadgeData.feature.title}`,
+      color: updateBadgeData.major.color,
+    },
     notes: [
       "Initial release of TaskFlow",
       "Implemented add task function",

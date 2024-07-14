@@ -15,11 +15,15 @@ export default function Banner() {
         pages
       </p>
       <div className="flex flex-wrap items-center gap-4 sm:mt-0">
+        <LinkButton
+          href={bannerHistory[bannerHistory.length - 1].data[0].link}
+          name={bannerHistory[bannerHistory.length - 1].data[0].name}
+          icon={bannerHistory[bannerHistory.length - 1].data[0].icon}
+        />
         {footerLinksData.map((item, index) => (
           <LinkButton
             key={index}
             href={item.link}
-            icon={item.icon}
             name={item.name}
           />
         ))}
@@ -34,7 +38,7 @@ function LinkButton({
   name,
 }: {
   href: string;
-  icon: JSX.Element;
+  icon?: JSX.Element;
   name: string;
 }) {
   return (
@@ -48,14 +52,11 @@ function LinkButton({
   );
 }
 
-
-
-
 const bannerHistory = [
   {
     id: 2,
     note: "Visit newly developed pages",
-    data: footerLinksData
+    data: footerLinksData,
   },
   {
     id: 1,

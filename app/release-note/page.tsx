@@ -1,9 +1,25 @@
 "use client";
 import PageTemplate from "@/components/elements/PageTemplate";
-import React from "react";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import { motion } from "framer-motion";
-import { releaseNotesData } from "@/lib/Data";
+import { releaseNotesData, upcomingFeatures } from "@/lib/Data";
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import FadeDownDiv from "@/components/Animations/FadeDownDiv";
+
+import Task01Icon from "@/public/svg/icons/Task01Icon";
+import CancelCircleIcon from "@/public/svg/icons/CancelCircleIcon";
+import AppStoreIcon from "@/public/svg/icons/AppStoreIcon";
+import AppleIcon01 from "@/public/svg/icons/AppleIcon01";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -33,6 +49,31 @@ export default function ReleaseNote() {
         >
           Release Notes
         </motion.h1>
+
+        <FadeDownDiv>
+          <div className="border rounded-lg mb-5 shadow-lg px-6 py-5 bg-zinc-100 dark:bg-zinc-900">
+            <h2 className="text-2xl font-semibold mb-4 text-cente text-[#16A34A]">
+              Upcoming Features and Updates
+            </h2>
+            <ul className="flex flex-col space-y-2 text-left">
+              {upcomingFeatures.map((item, index) => (
+                <li
+                  key={index}
+                  className="inline-flex text-pretty flex-wrap items-center space-x-2"
+                >
+                  {index === 0 && (
+                    <AppleIcon01 className="w-5 h-5" />
+                  )}
+                  <span>{item}</span>
+                  {index === 0 && (
+                    <AppStoreIcon className="w-5 h-5" />
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </FadeDownDiv>
+
         <motion.div
           className="grid gap-6 md:gap-8 md:grid-cols-2"
           variants={containerVariants}
@@ -50,12 +91,21 @@ export default function ReleaseNote() {
                 <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">
                   Version {release.version}
                 </h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
                   Released on {release.date}
                 </p>
-                <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                <Badge
+                  className={`${release.badge?.color} bg-purple-500 hover:bg-black mb-1 cursor-default`}
+                >
+                  {release.badge?.title}
+                </Badge>
+                <Separator />
+                <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300 text-wrap line-clamp-5">
                   {release.notes.map((note, noteIndex) => (
-                    <li key={noteIndex} className="text-lg leading-relaxed text-left">
+                    <li
+                      key={noteIndex}
+                      className="text-lg leading-relaxed text-left"
+                    >
                       {note}
                     </li>
                   ))}
@@ -65,6 +115,48 @@ export default function ReleaseNote() {
                     Latest Version
                   </Badge>
                 )}
+
+                <Drawer>
+                  {/* Button or CustomButton is not used here to avoid hydration errors because DrawerTrigger also contains a button tag */}
+                  <DrawerTrigger className="flex w-full justify-center items-center gap-1 border rounded-lg px-2 py-1.5 mt-2 hover:bg-gray-200 transition ease-in-out duration-500 dark:border-gray-500 dark:hover:bg-white dark:hover:text-black">
+                    Read Full
+                    <Task01Icon />
+                  </DrawerTrigger>
+                  <DrawerContent className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+                    <DrawerHeader className="p-4 flex justify-between items-center border-b dark:border-gray-700">
+                      <DrawerTitle className="text-3xl text-center flex-grow text-gray-800 dark:text-white">
+                        {`Version - ${release.version}`}
+                      </DrawerTitle>
+                      <DrawerClose className="ml-2">
+                        <CancelCircleIcon />
+                      </DrawerClose>
+                    </DrawerHeader>
+                    <DrawerDescription className="text-center my-1 text-red-500 font-semibold text-base">{`Released on ${release.date}`}</DrawerDescription>
+                    <div className="p-4 overflow-y-scroll max-h-[60vh] sm:px-14">
+                      <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                        {release.notes.map((note, noteIndex) => (
+                          <li
+                            key={noteIndex}
+                            className="text-lg leading-relaxed text-left"
+                          >
+                            {note}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <DrawerFooter className="flex justify-center flex-col items-center border-t border-gray-300 dark:border-gray-700 p-4">
+                      <p className="text-center text-gray-700 dark:text-gray-300">
+                        We are always working to provide the best features{" "}
+                        <a
+                          href="/buy-a-coffee"
+                          className="text-blue-500 underline hover:text-blue-700 dark:hover:text-blue-300"
+                        >
+                          Support Us
+                        </a>
+                      </p>
+                    </DrawerFooter>
+                  </DrawerContent>
+                </Drawer>
               </motion.div>
             ))
           ) : (

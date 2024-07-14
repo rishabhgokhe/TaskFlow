@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import NoteAddIcon from "@/public/svg/icons/NoteAddIcon";
 import { Button } from "../../ui/button";
 import { AddTaskInlineModal } from "./AddTaskInlineModal";
+import AddCircleIcon from "@/public/svg/icons/AddCircleIcon";
 
 export function AddTaskButton() {
   const [showTaskButton, setShowTaskButton] = useState(false);
@@ -31,8 +31,8 @@ export const AddTaskButtonComponent = ({
         variant={"outline"}
         onClick={onClickHandler}
       >
-        <NoteAddIcon />
-        <p className="ml-1">Add Task</p>
+        <p className="mr-1">Add Task</p>
+        <AddCircleIcon />
       </Button>
     </div>
   );
