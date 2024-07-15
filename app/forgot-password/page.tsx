@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 import InformationCircleIcon from "@/public/svg/icons/InformationCircleIcon";
-import MailUpload01Icon from "@/public/svg/icons/MailUpload01Icon";
+import MailSend01Icon from "@/public/svg/icons/MailSend01Icon";
 import toast from "react-hot-toast";
 
 export default function ForgotPassword() {
@@ -53,7 +53,7 @@ export default function ForgotPassword() {
             </CardContent>
             <CardFooter>
               <CustomButton
-                rightIcon={<MailUpload01Icon />}
+                rightIcon={<MailSend01Icon />}
                 type="submit"
                 className="w-full mt-4"
               >

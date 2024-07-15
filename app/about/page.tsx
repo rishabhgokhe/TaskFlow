@@ -11,6 +11,7 @@ import { baseRedColor } from "@/lib/Colors";
 import MailOpenIcon from "@/public/svg/icons/MailOpenIcon";
 import UserCircleIcon from "@/public/svg/icons/UserCircleIcon";
 import AppleFinderIcon from "@/public/svg/icons/AppleFinderIcon";
+import FadeDown from "@/components/Animations/FadeDown";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -79,17 +80,18 @@ export default function About() {
         >
           {aboutData.founderText}
         </motion.p>
-        <div className="text-left">
+
+        <FadeDown variant="div" delay={1.1} className="flex justify-center">
           {/* macOS finder logo */}
-          <div className="flex justify-center">
             <div className="inline-flex items-center rounded-lg border p-1">
               <span className="opacity-40 font-bold my-1 mx-1">
                 Developing on macOS
               </span>{" "}
               <AppleFinderIcon className="w-6 h-6" />
             </div>
-          </div>
+        </FadeDown>
 
+        <div className="text-left">
           <motion.h2
             className="text-lg md:text-2xl font-semibold text-gray-800 dark:text-white mb-2 md:mb-4"
             variants={itemVariants}

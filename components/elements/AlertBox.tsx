@@ -1,5 +1,5 @@
 import React from "react";
-import FadeDownDiv from "../Animations/FadeDownDiv";
+import FadeDown from "../Animations/FadeDown";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 
 export default function AlertBox({
@@ -16,7 +16,7 @@ export default function AlertBox({
   return (
     <>
       {alertShown && (
-        <FadeDownDiv>
+        <FadeDown variant="div">
           <Alert className="w-full shadow-md rounded-md">
             {icon}
             <AlertTitle className={`text-red-500`}>
@@ -24,7 +24,7 @@ export default function AlertBox({
             </AlertTitle>
             <AlertDescription className="mt-2">{description}</AlertDescription>
           </Alert>
-        </FadeDownDiv>
+        </FadeDown>
       )}
     </>
   );

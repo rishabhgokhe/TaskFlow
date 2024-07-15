@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 import { releaseNotesData, upcomingFeatures } from "@/lib/Data";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import FadeDownDiv from "@/components/Animations/FadeDownDiv";
+import FadeDown from "@/components/Animations/FadeDown";
 
 import Task01Icon from "@/public/svg/icons/Task01Icon";
 import CancelCircleIcon from "@/public/svg/icons/CancelCircleIcon";
@@ -42,15 +42,15 @@ export default function ReleaseNote() {
   return (
     <PageTemplate>
       <div className="max-w-5xl mx-auto py-5 px-4">
-        <motion.h1
+        <FadeDown
+          variant="h1"
+          duration={0.6}
           className="text-4xl font-bold text-gray-800 dark:text-white mb-8 text-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
         >
           Release Notes
-        </motion.h1>
+        </FadeDown>
 
-        <FadeDownDiv>
+        <FadeDown variant="div" delay={0.3} duration={0.6}>
           <div className="border rounded-lg mb-5 shadow-lg px-6 py-5 bg-zinc-100 dark:bg-zinc-900">
             <h2 className="text-2xl font-semibold mb-4 text-cente text-[#16A34A]">
               Upcoming Features and Updates
@@ -59,26 +59,21 @@ export default function ReleaseNote() {
               {upcomingFeatures.map((item, index) => (
                 <li
                   key={index}
-                  className="inline-flex text-pretty flex-wrap items-center space-x-2"
+                  className="inline-flex flex-wrap items-center space-x-2"
                 >
-                  {index === 0 && (
-                    <AppleIcon01 className="w-5 h-5" />
-                  )}
                   <span>{item}</span>
-                  {index === 0 && (
-                    <AppStoreIcon className="w-5 h-5" />
-                  )}
+                  {index === 0 && <AppStoreIcon className="w-5 h-5" />}
+                  {index === 0 && <AppleIcon01 className="w-5 h-5" />}
                 </li>
               ))}
             </ul>
           </div>
-        </FadeDownDiv>
+        </FadeDown>
 
-        <motion.div
+        <FadeDown
           className="grid gap-6 md:gap-8 md:grid-cols-2"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+          variant={"div"}
+          delay={0.5}
         >
           {releaseNotesData.length > 0 ? (
             releaseNotesData.map((release, index) => (
@@ -95,7 +90,7 @@ export default function ReleaseNote() {
                   Released on {release.date}
                 </p>
                 <Badge
-                  className={`${release.badge?.color} bg-purple-500 hover:bg-black mb-1 cursor-default`}
+                  className={`${release.badge?.color} bg-purple-500 text-white hover:bg-black mb-1 cursor-default`}
                 >
                   {release.badge?.title}
                 </Badge>
@@ -170,7 +165,7 @@ export default function ReleaseNote() {
               </h2>
             </motion.div>
           )}
-        </motion.div>
+        </FadeDown>
       </div>
     </PageTemplate>
   );

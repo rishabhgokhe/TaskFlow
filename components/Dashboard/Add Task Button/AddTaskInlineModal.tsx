@@ -19,9 +19,10 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { Calendar } from "@/components/ui/calendar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { listNames } from "@/lib/Data";
+
 import ArrowDown05Icon from "@/public/svg/icons/ArrowDown05Icon";
 import CalendarUpload01Icon from "@/public/svg/icons/CalendarUpload01Icon";
-import { listNames } from "@/lib/Data";
 
 const FormSchema = z.object({
   taskTitle: z.string().min(2, { message: "Task Title must be at least 2 characters." }),
@@ -94,7 +95,7 @@ export function AddTaskInlineModal({handleCloseModal} : AddTaskInlineModalProps)
           />
       </div>
 
-        <div className="flex flex-col sm:flex-row w-full justify-around gap-2">
+        <div className="flex flex-col sm:flex-row w-full justify-between gap-2">
           {/* // DatePicker  */}
           <FormField
             control={form.control}
@@ -135,7 +136,7 @@ export function AddTaskInlineModal({handleCloseModal} : AddTaskInlineModalProps)
               <FormItem>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger className="ring-inset min-w-[150px]">
+                    <SelectTrigger className="ring-inset lg:min-w-[220px] lg:max-w-full xl:min-w-[300px]">
                       <SelectValue placeholder="Select a List" />
                     </SelectTrigger>
                   </FormControl>

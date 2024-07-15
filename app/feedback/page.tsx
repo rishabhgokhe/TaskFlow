@@ -46,7 +46,7 @@ const Feedback = () => {
       <div className="flex mt-10 mb-10 items-start justify-center min-h-[70vh]">
         <Card className="max-w-[500px]">
           <CardHeader>
-            <CardTitle>
+            <CardTitle className="mb-4 sm:mx-10 montserrat">
               Send <span className={`text-red-500`}>Us</span> Your Feedback
             </CardTitle>
             <CardDescription>

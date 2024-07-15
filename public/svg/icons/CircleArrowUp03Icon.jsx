@@ -14,7 +14,7 @@ const CircleArrowUp03Icon = (props) => (
     color="currentColor"
   >
     <path
-      opacity="0.4"
+      opacity="0.3"
       d="M22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12Z"
       fill="currentColor"
     ></path>

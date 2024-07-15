@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { SelectSingleEventHandler } from "react-day-picker";
 import { Button } from "@/components/ui/button";
 import {
   DialogContent,
@@ -9,21 +10,32 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { listNames } from "@/lib/Data";
 import { Task } from "@/types";
-
-import SearchList02Icon from "@/public/svg/icons/SearchList02Icon";
-import Calendar01Icon from "@/public/svg/icons/Calendar01Icon";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import CalendarUpload01Icon from "@/public/svg/icons/CalendarUpload01Icon";
-import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/cn";
 import { format } from "date-fns";
-import { SelectSingleEventHandler } from 'react-day-picker';
+
+import SearchList02Icon from "@/public/svg/icons/SearchList02Icon";
+import Calendar02Icon from "@/public/svg/icons/Calendar02Icon";
+import CalendarUpload01Icon from "@/public/svg/icons/CalendarUpload01Icon";
 
 export function EditTaskDialogContent({ task }: { task: Task }) {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date(task.date));
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
+    new Date(task.date)
+  );
 
   const handleDateSelected: SelectSingleEventHandler = (date) => {
     if (date instanceof Date && !isNaN(date.getTime())) {
@@ -35,12 +47,9 @@ export function EditTaskDialogContent({ task }: { task: Task }) {
     <DialogContent className="sm:max-w-[425px]">
       <DialogHeader>
         <DialogTitle>Edit task</DialogTitle>
-        <DialogDescription>
-          Make changes to your tasks here.
-        </DialogDescription>
+        <DialogDescription>Make changes to your tasks here.</DialogDescription>
       </DialogHeader>
       <div className="grid gap-4 py-4">
-
         {/* Edit Title */}
         <div className="items-center gap-4">
           <Label htmlFor="title" className="pl-1 text-right">
@@ -86,7 +95,7 @@ export function EditTaskDialogContent({ task }: { task: Task }) {
         {/* Date Changer */}
         <div className="flex items-center gap-4">
           <div className="flex justify-center items-center gap-1">
-            <Calendar01Icon />
+            <Calendar02Icon />
             <Label htmlFor="date" className="text-right">
               Date
             </Label>
@@ -95,9 +104,11 @@ export function EditTaskDialogContent({ task }: { task: Task }) {
             <PopoverTrigger asChild>
               <Button
                 variant="outline"
-                className={cn("min-w-[150px] pl-3 text-left font-normal text-muted-foreground")}
+                className={cn(
+                  "min-w-[150px] pl-3 text-left font-normal text-muted-foreground"
+                )}
               >
-                {selectedDate ? format(selectedDate, "PPP") : 'Select date'}
+                {selectedDate ? format(selectedDate, "PPP") : "Select date"}
                 <CalendarUpload01Icon className="ml-2 h-4 w-4 opacity-50" />
               </Button>
             </PopoverTrigger>

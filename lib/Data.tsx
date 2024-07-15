@@ -291,8 +291,12 @@ export const releaseNotesData = [
     },
     notes: [
       "Revamped icons to a new design with duotone visuals",
-      "adder drawer to release note version blocks with new dialog trigger and clamped version black lines to 6",
-      "new updage included with each version of new release"
+      "Added drawer to release note version blocks with new dialog trigger and clamped version block lines to 6",
+      "Added new page for Subscribe to our Newsletter",
+      "Enhanced the use of Animations with custom animation components",
+      "Fixed layout of date picker and select list in add task inline modal",
+      "Updated Important link component with relevant contents - Feedback",
+      "Included new update with each version of new release",
     ],
   },
   {
