@@ -6,6 +6,24 @@
 
 TaskFlow is a powerful and intuitive web application designed to help users manage and organize their tasks efficiently. It offers a user-friendly interface to add, view, and manage to-do items, enhancing workflow organization and task tracking.
 
+# Table of Contents
+
+  - [Features](#-features)
+  - [Upcoming Features](#-upcoming-features)
+  - [Tech Stack](#️-tech-stack)
+  - [Setup Instructions](#️-setup-instructions)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Future Enhancements](#future-enhancements)
+  - [Live Preview](#live-preview)
+  - [Acknowledgments](#acknowledgments)
+  - [Code of Conduct](#code-of-conduct)
+  - [License](#license)
+  - [Authors](#-authors)
+  - [About Me](#-about-me)
+  - [Feedback](#feedback)
+  - [Contribution Guidelines](#-contribution-guidelines)
+
 ## ✨ Features
 
 - **Add Tasks:** Create new tasks with a title.
