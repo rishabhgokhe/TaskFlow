@@ -26,9 +26,14 @@ TaskFlow is a powerful and intuitive web application designed to help users mana
 
 **Track all development and features on our** [TaskFlow Development](https://github.com/users/rishabhgokhe/projects/2)
 
+
+## Currently Working on Feature (User Authentication)
+I am currently working on User Login ContextProvider.
+
+
 ## 🛠️ Tech Stack
 
-- **Frontend:** HTML, CSS, JavaScript, TypeScript
+- **Frontend:** HTML, CSS, JavaScript, TypeScript, Next JS
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB (MongoDB Atlas)
 
@@ -44,15 +49,17 @@ TaskFlow is a powerful and intuitive web application designed to help users mana
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repository-url>
-   cd taskflow
+   git clone https://github.com/rishabhgokhe/TaskFlow.git
 
-
-2. **Install Node Modules**
+2. **Navigate to Repository**
     ```bash
-    npm Install
+    cd TaskFlow
 
-3. **Setup Environment Variables:**  
+3. **Install Node Modules**
+    ```bash
+    npm install
+
+4. **Setup Environment Variables:**  
    Create a `.env.local` file in the root directory and add the following:  
        JWT_SECRET- is essential for generating login cookies
        <br/>
@@ -64,13 +71,9 @@ TaskFlow is a powerful and intuitive web application designed to help users mana
    AUTH_GOOGLE_ID=<your-auth-google-id>
    AUTH_GOOGLE_SECRET=<your-auth-google-secret>
 
-4. (Optional) **Install nodemon if not installed for realtime rendering**
-    ```bash
-    npm install -g nodemon
-
 5. **Run project and start Development**
     ```bash
-    nodemon index.js
+    npm run dev
 
 6. **Access the Application:**  
    Open your browser and navigate to [http://localhost:3000](http://localhost:3000).

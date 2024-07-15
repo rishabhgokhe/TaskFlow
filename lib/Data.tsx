@@ -297,6 +297,7 @@ export const releaseNotesData = [
       "Fixed layout of date picker and select list in add task inline modal",
       "Updated Important link component with relevant contents - Feedback",
       "Included new update with each version of new release",
+      "Fixed type error for motion component in AnimationData"
     ],
   },
   {

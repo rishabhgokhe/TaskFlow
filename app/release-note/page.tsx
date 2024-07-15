@@ -118,7 +118,7 @@ export default function ReleaseNote() {
                     <Task01Icon />
                   </DrawerTrigger>
                   <DrawerContent className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-                    <DrawerHeader className="p-4 flex justify-between items-center border-b dark:border-gray-700">
+                    <DrawerHeader className="p-4 cursor-grab flex justify-between items-center border-b dark:border-gray-700">
                       <DrawerTitle className="text-3xl text-center flex-grow text-gray-800 dark:text-white">
                         {`Version - ${release.version}`}
                       </DrawerTitle>
