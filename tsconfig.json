@@ -33,6 +33,6 @@
     "app/login/page.tsx",
     "app/layout.jsx",
     "middleware/resHandler.ts"
-  ],
+, "redux/user/UserContextProvider.tsx"  ],
   "exclude": ["node_modules"]
 }

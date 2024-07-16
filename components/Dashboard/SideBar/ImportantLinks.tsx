@@ -12,9 +12,9 @@ import MailSend01Icon from "@/public/svg/icons/MailSend01Icon";
 
 export default function ImportantLinks() {
   return (
-    <div className="mt-auto p-4">
+    <div className="mt-auto sm:p-4">
       <Card x-chunk="dashboard-02-chunk-0">
-        <CardHeader className="p-2 pt-0 md:p-4">
+        <CardHeader className="p-2 md:p-4">
           <CardTitle>Share Your Opinion</CardTitle>
           <CardDescription>
             We are constantly improving our app based on the feedback we receive. Please take a moment to share your thoughts with us.
