@@ -2,7 +2,6 @@ import { catchAsyncError } from "@/middleware/catchAsyncError";
 import { handleRes } from "@/middleware/resHandler";
 import { NextApiRequest, NextApiResponse } from "next";
 import { saveCookie } from "@/lib/saveCookies";
-import { LogOut } from "lucide-react";
 
 
 const logOut = catchAsyncError(

@@ -4,6 +4,8 @@ import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "next-themes";
 import ClientProvider from "@/redux/ClientProvider";
 import UserContextProvider from "@/context/User/UserContextProvider";
+import { Provider } from "react-redux";
+import store from "@/redux/store";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,17 +14,21 @@ export const metadata = {
   description: "Organising WorkFlow",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>
         <ClientProvider>
-          <ThemeProvider attribute="class">
-            <UserContextProvider>
+          <UserContextProvider>
+            <ThemeProvider attribute="class">
               {children}
               <Toaster position="top-right" />
-            </UserContextProvider>
-          </ThemeProvider>
+            </ThemeProvider>
+          </UserContextProvider>
         </ClientProvider>
       </body>
     </html>

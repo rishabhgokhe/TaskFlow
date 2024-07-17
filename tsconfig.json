@@ -26,12 +26,12 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "lib/generateJwtToken.js",
+    "lib/generateJwtToken.ts",
     "middleware/isAuthenticated.js",
     "lib/saveCookies.ts",
     "context/User/UserContextProvider.tsx",
     "app/login/page.tsx",
-    "app/layout.jsx",
+    "app/layout.tsx",
     "middleware/resHandler.ts"
 , "redux/user/UserContextProvider.tsx"  ],
   "exclude": ["node_modules"]
