@@ -12,24 +12,34 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "../ui/button";
-import { useUserContext } from "@/context/User/UserContext";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { logoutUser } from "@/redux/user/userSlice";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import UserCircleIcon from "@/public/svg/icons/UserCircleIcon";
 import CustomButton from "../elements/CustomButton";
 import GetQuotes from "@/middleware/getQuotes";
 
 export default function SearchAreaWithAvatarDropdown() {
-  const { user } = useUserContext();
-  const [quote, setQuote] = useState("");
+  const user = useAppSelector(state => state.user.user?.name);
+  const [quote, setQuote] = useState<string>("");
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const fetchQuote = async () => {
-      const fetchedQuote = await GetQuotes();
-      setQuote(fetchedQuote);
+      try {
+        const fetchedQuote = await GetQuotes();
+        setQuote(fetchedQuote);
+      } catch (error) {
+        console.error("Failed to fetch quote:", error);
+      }
     };
 
     fetchQuote();
   }, []);
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+  };
 
   return (
     <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
@@ -43,14 +53,16 @@ export default function SearchAreaWithAvatarDropdown() {
               placeholder="Search tasks..."
               className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3 ring-inset"
             />
-            <h3 className="hidden md:block mx-auto font-semibold">{`Welcome back ${user?.name}`}</h3>
+            <h3 className="hidden md:block mx-auto font-semibold">
+              {user ? `Welcome back ${user}` : "Welcome back"}
+            </h3>
             <p className="hidden md:block mx-auto font-semibold">{quote}</p>
           </div>
         </form>
       </div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="secondary" size="icon" className="rounded-full">
+          <Button variant="secondary" size="icon" className="rounded-full" aria-label="User Menu">
             <Avatar>
               <AvatarImage src="https://avatars.githubusercontent.com/u/120303705?v=4" />
               <AvatarFallback>
@@ -64,11 +76,11 @@ export default function SearchAreaWithAvatarDropdown() {
           <DropdownMenuSeparator />
           <DropdownMenuItem>Settings</DropdownMenuItem>
           <DropdownMenuItem>
-            <a href={"/help"}>Support</a>
+            <a href="/help">Support</a>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
-            <CustomButton className="w-full">Logout</CustomButton>
+            <CustomButton onClick={handleLogout} className="w-full">Logout</CustomButton>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

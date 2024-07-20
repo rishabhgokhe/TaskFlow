@@ -20,39 +20,42 @@ import GoogleIcon from "../../public/svg/icons/GoogleIcon";
 import { useUserContext } from "@/context/User/UserContext";
 import { redirect } from "next/navigation";
 import PageTemplate from "@/components/elements/PageTemplate";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { loginUser } from "@/redux/user/userSlice";
+import CustomLinkButton from "@/components/elements/CustomLinkButton";
 
 export default function LoginForm() {
+  const dispatch = useAppDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { user, setUser } = useUserContext();
+  const userId = useAppSelector(state => state.user.user?._id)
 
-  const handleLogin = async (e: FormEvent) => {
+  // const handleLogin = async (e: FormEvent) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post("/api/auth/login", { email, password });
+  //     const data = response.data;
+  //     const userData = data.user;
+
+  //     console.log(data);
+  //     console.log(userData);
+
+  //     if (!data.success) return toast.error(data.message);
+  //     toast.success(data.message);
+  //     if (userData !== undefined) setUser?.(userData);
+  //   } catch (err) {
+  //     console.error("Error during login:", err);
+  //     toast.error("Invalid Email or Password");
+  //   }
+  // };
+
+  const handleLogin = (e: FormEvent) => {
     e.preventDefault();
-    try {
-      const response = await axios.post("/api/auth/login", { email, password });
-      const data = response.data;
-      const userData = data.user;
-
-      console.log(data);
-      console.log(userData);
-
-      if (!data.success) return toast.error(data.message);
-      toast.success(data.message);
-      if (userData !== undefined) setUser?.(userData);
-    } catch (err) {
-      console.error("Error during login:", err);
-      toast.error("Invalid Email or Password");
-    }
+    dispatch(loginUser({ email, password }));
   };
 
-  if (user?._id) return redirect("/dashboard");
-
-  // const dispatch = useAppDispatch()
-
-  // const handleLogin = (e: FormEvent) => {
-  //   dispatch(login({ email, password }));
-  // };
+  if (userId) return redirect("/dashboard");
 
   return (
     <PageTemplate>

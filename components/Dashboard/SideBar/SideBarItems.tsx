@@ -1,10 +1,12 @@
 import Link from "next/link";
 import React from "react";
 import { Badge } from "../../ui/badge";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Separator } from "../../ui/separator";
 import { Button } from "../../ui/button";
 import { SideBarDataType } from "@/types";
 import { TagsAccordian } from "./TagsAccordian";
+import CreateListDialog from "./CreateListDialog";
 
 import AddCircleIcon from "@/public/svg/icons/AddCircleIcon";
 
@@ -63,9 +65,15 @@ export const SideBarItems = ({
           </Link>
         ))}
 
-      <Button className="mb-2 py-2" variant={"outline"}>
-        Create Custom list <AddCircleIcon className="mx-1 w-5 h-5" />
-      </Button>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button className="mb-2 py-2" variant={"outline"}>
+            Create Custom list <AddCircleIcon className="mx-1 w-5 h-5" />
+          </Button>
+        </DialogTrigger>
+        <CreateListDialog />
+      </Dialog>
+
       <Separator />
 
       {/* Tags Section */}

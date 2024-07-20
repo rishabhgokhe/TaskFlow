@@ -5,6 +5,8 @@ import { User } from "../../types";
 import { UserContext } from "./UserContext";
 import { EmptyUserObject } from "@/lib/objects";
 import axios from "axios";
+import { useAppDispatch } from "@/hooks";
+import { getCurrentUser } from "@/redux/user/userSlice";
 
 type ContextProviderProps = {
   children: ReactNode;
@@ -12,26 +14,31 @@ type ContextProviderProps = {
 
 export default function UserContextProvider({ children }: ContextProviderProps) {
   const [user, setUser] = useState<User>(EmptyUserObject);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const fetchUserProfile = async () => {
-      console.log("Hiii i am rishabh");
+    dispatch(getCurrentUser());
+  }, [dispatch]);
+
+  // useEffect(() => {
+  //   const fetchUserProfile = async () => {
+  //     // console.log("Hiii i am rishabh");
       
-      try {
-        const response = await axios.get("/api/profile");
-        const data = response.data;
-        console.log(data.name);
+  //     try {
+  //       const response = await axios.get("/api/profile");
+  //       const data = response.data;
+  //       // console.log(data.name);
 
-        if (data.success) {
-          setUser(data.user);
-        }
-      } catch (error) {
-        console.error("Error fetching user profile:", error);
-      }
-    };
+  //       if (data.success) {
+  //         setUser(data.user);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching user profile:", error);
+  //     }
+  //   };
 
-    fetchUserProfile();
-  }, []);
+  //   fetchUserProfile();
+  // }, []);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

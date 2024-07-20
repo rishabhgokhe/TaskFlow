@@ -17,3 +17,6 @@ export default function PageTemplate({children} : {children: JSX.Element}) {
     </div>
   );
 }
+
+// dark:bg-gradient-to-r dark:from-[#28313B] dark:to-[#485461]
+// dark:bg-gradient-to-r dark:from-[#c96135] dark:to-[#682121]

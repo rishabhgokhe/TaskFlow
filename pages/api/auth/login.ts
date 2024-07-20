@@ -25,6 +25,9 @@ const logIn = catchAsyncError(
 
     const user = await User.findOne({email})
 
+    console.log("login api route triggered");
+    console.log(user);
+
     const token = generateJWTToken(user._id);
     saveCookie(res, token, true);
     res.status(200).json({
