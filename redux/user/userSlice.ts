@@ -19,6 +19,29 @@ const initialState: UserState = {
   user: null,
 };
 
+export const registerUser = createAsyncThunk(
+  "user/register",
+  async (
+    {
+      name,
+      email,
+      password,
+    }: { name: string; email: string; password: string },
+    thunkAPI
+  ) => {
+    try {
+      const response = await axios.post(
+        `${server}/api/auth/register`,
+        { name, email, password },
+        { withCredentials: true }
+      );
+      return response.data.user;
+    } catch (error: any) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
 export const loginUser = createAsyncThunk(
   "user/login",
   async (
@@ -44,9 +67,10 @@ export const logoutUser = createAsyncThunk(
     try {
       const response = await axios.post(
         `${server}/api/auth/logout`,
+        {},
         { withCredentials: true }
       );
-      return response.data.user;
+      return response.data.message;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.response.data.errors);
     }
@@ -89,6 +113,21 @@ const userSlice = createSlice({
         state.isLoading = false;
         state.isAuthenticated = false;
         state.error = "Login failed. Please try again.";
+      })
+
+      .addCase(registerUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(registerUser.fulfilled, (state, action: PayloadAction<User>) => {
+        state.isLoading = false;
+        state.isAuthenticated = true;
+        state.user = action.payload;
+        state.error = null;
+      })
+      .addCase(registerUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isAuthenticated = false;
+        state.error = action.payload as string;
       })
 
       .addCase(logoutUser.pending, (state) => {

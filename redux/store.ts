@@ -23,4 +23,4 @@ export type AppDispatch = typeof store.dispatch;
 
 export default store;
 
-export const server = "http://localhost:3000";
+export const server = "https://taskflow20.vercel.app";

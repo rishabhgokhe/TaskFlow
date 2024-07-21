@@ -1,7 +1,8 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { MobileNav } from "./SideBar/MobileSideBar";
-import { CircleUser, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { Input } from "../ui/input";
 import {
   DropdownMenu,
@@ -18,9 +19,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import UserCircleIcon from "@/public/svg/icons/UserCircleIcon";
 import CustomButton from "../elements/CustomButton";
 import GetQuotes from "@/middleware/getQuotes";
+import toast from "react-hot-toast";
 
 export default function SearchAreaWithAvatarDropdown() {
-  const user = useAppSelector(state => state.user.user?.name);
+  const user = useAppSelector((state) => state.user.user?.name);
   const [quote, setQuote] = useState<string>("");
   const dispatch = useAppDispatch();
 
@@ -38,7 +40,17 @@ export default function SearchAreaWithAvatarDropdown() {
   }, []);
 
   const handleLogout = () => {
-    dispatch(logoutUser());
+    dispatch(logoutUser())
+      .unwrap()
+      .then(() => {
+        console.log("Logout successful");
+        toast.success("Logout Successfully");
+      })
+      .catch((error) => {
+        console.error("Logout failed:", error);
+        toast.error("Logout failed");
+      });
+      window.location.replace("/");
   };
 
   return (
@@ -54,7 +66,7 @@ export default function SearchAreaWithAvatarDropdown() {
               className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3 ring-inset"
             />
             <h3 className="hidden md:block mx-auto font-semibold">
-              {user ? `Welcome back ${user}` : "Welcome back"}
+              {user ? `Welcome back, ${user}` : null}
             </h3>
             <p className="hidden md:block mx-auto font-semibold">{quote}</p>
           </div>

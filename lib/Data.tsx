@@ -22,8 +22,6 @@ import StickyNote02Icon from "@/public/svg/icons/StickyNote02Icon";
 import Coffee02Icon from "@/public/svg/icons/Coffee02Icon";
 import SecurityLockIcon from "@/public/svg/icons/SecurityLockIcon";
 import HelpCircleIcon from "@/public/svg/icons/HelpCircleIcon";
-import { title } from "process";
-import { color } from "framer-motion";
 
 export const SideBarList = [
   {
@@ -283,7 +281,26 @@ const updateBadgeData = {
 
 export const releaseNotesData = [
   {
-    version: "1.1.0",
+    version: "0.1.1",
+    date: "2024-07-21",
+    badge: {
+      title: `${updateBadgeData.major.title} | ${updateBadgeData.feature.title} | ${updateBadgeData.bug.title}`,
+      color: updateBadgeData.major.color,
+    },
+    notes: [
+      "The 'Register User' functionality now creates a new user and redirects them to the dashboard.",
+      "Added Redux Persist for retrieving users and introduced a new dialog for creating custom lists.",
+      "Created new thunk APIs for login, registration, and logout.",
+      "Implemented a fade-down animation on the AddTaskInlineModel.",
+      "The logout button now works as expected: it deletes cookies and redirects to the homepage.",
+      "You can now add tasks, which are saved to the database. We're working on connecting tasks to users and fetching them from the database.",
+      "Replaced Context API with Redux for tooltip management.",
+      "Updated the welcome message on the dashboard to display only when the user is logged in.",
+      "Added a link to the TaskFlow Development GitHub project in the 'Upcoming Features' section of the release notes.",
+    ],
+  },
+  {
+    version: "0.1.0",
     date: "15-07-2024",
     badge: {
       title: updateBadgeData.minor.title,
@@ -297,11 +314,11 @@ export const releaseNotesData = [
       "Fixed layout of date picker and select list in add task inline modal",
       "Updated Important link component with relevant contents - Feedback",
       "Included new update with each version of new release",
-      "Fixed type error for motion component in AnimationData"
+      "Fixed type error for motion component in AnimationData",
     ],
   },
   {
-    version: "1.0.9",
+    version: "0.0.9",
     date: "13-07-2024",
     badge: {
       title: `${updateBadgeData.major.title} | ${updateBadgeData.feature.title}`,
@@ -321,7 +338,7 @@ export const releaseNotesData = [
     ],
   },
   {
-    version: "1.0.8",
+    version: "0.0.8",
     date: "12-07-2024",
     badge: {
       title: updateBadgeData.improvement.title,
@@ -334,7 +351,7 @@ export const releaseNotesData = [
     ],
   },
   {
-    version: "1.0.7",
+    version: "0.0.7",
     date: "11-07-2024",
     badge: {
       title: `${updateBadgeData.minor.title} | ${updateBadgeData.hotfix.title}`,
@@ -347,7 +364,7 @@ export const releaseNotesData = [
     ],
   },
   {
-    version: "1.0.6",
+    version: "0.0.6",
     date: "08-07-2024",
     badge: {
       title: updateBadgeData.feature.title,
@@ -363,7 +380,7 @@ export const releaseNotesData = [
     ],
   },
   {
-    version: "1.0.5",
+    version: "0.0.5",
     date: "29-06-2024",
     badge: {
       title: `${updateBadgeData.bug.title} | ${updateBadgeData.improvement.title}`,
@@ -376,7 +393,7 @@ export const releaseNotesData = [
     ],
   },
   {
-    version: "1.0.4",
+    version: "0.0.4",
     date: "28-06-2024",
     badge: {
       title: `${updateBadgeData.major.title} | ${updateBadgeData.feature.title}`,
@@ -391,7 +408,7 @@ export const releaseNotesData = [
     ],
   },
   {
-    version: "1.0.3",
+    version: "0.0.3",
     date: "27-06-2024",
     badge: {
       title: `${updateBadgeData.performance.title} | ${updateBadgeData.improvement.title}`,
@@ -405,7 +422,7 @@ export const releaseNotesData = [
     ],
   },
   {
-    version: "1.0.2",
+    version: "0.0.2",
     date: "26-06-2024",
     badge: {
       title: `${updateBadgeData.performance.title}`,
@@ -418,7 +435,7 @@ export const releaseNotesData = [
     ],
   },
   {
-    version: "1.0.1",
+    version: "0.0.1",
     date: "24-06-2024",
     badge: {
       title: `${updateBadgeData.major.title} | ${updateBadgeData.improvement.title}`,
@@ -430,7 +447,7 @@ export const releaseNotesData = [
     ],
   },
   {
-    version: "1.0.0",
+    version: "0.0.0",
     date: "22-05-2024",
     badge: {
       title: `${updateBadgeData.major.title} | ${updateBadgeData.feature.title}`,

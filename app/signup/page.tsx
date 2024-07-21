@@ -4,7 +4,7 @@ import Link from "next/link";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useUserContext } from "@/context/User/UserContext";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
@@ -27,6 +27,8 @@ import SecurityPasswordIcon from "@/public/svg/icons/SecurityPasswordIcon";
 import PageTemplate from "@/components/elements/PageTemplate";
 import { baseRedColor } from "@/lib/Colors";
 import AlertBox from "@/components/elements/AlertBox";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { registerUser } from "@/redux/user/userSlice";
 
 export default function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -35,7 +37,10 @@ export default function SignUp() {
   const [alertShown, setAlertShown] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { user, setUser } = useUserContext();
+  const dispatch = useAppDispatch()
+  const router = useRouter();
+  const isAuthenticated = useAppSelector((state) => state.user?.isAuthenticated);
+  const error = useAppSelector((state) => state.user?.error)
 
   const handleGeneratePassword = () => {
     const newPassword = generatePassword();
@@ -43,34 +48,47 @@ export default function SignUp() {
     setAlertShown(true);
   };
 
-  async function SignUpHandler(e: FormEvent) {
+  const SignUpHandler = async (e: FormEvent) => {
     e.preventDefault();
-    try {
-      const response = await axios.post("/api/auth/register", {
-        name: `${firstName} ${lastName}`,
-        email,
-        password,
-      });
-      const data = response.data;
-      console.log(data);
+    dispatch(registerUser({ name: `${firstName} ${lastName}`, email, password }));
+  };
 
-      if (!data.success) {
-        console.log(data);
-        toast.error(data.message);
-      } else {
-        console.log(data);
-        toast.success(data.message);
-        setUser?.(data.user);
-      }
-    } catch (err) {
-      console.error("Error during Sign-up:", err);
-      toast.error("Failed Signing Up");
-    }
+  if (isAuthenticated) {
+    router.push("/dashboard");
   }
 
-  if (user?._id) {
-    redirect("/dashboard");
+  if (error) {
+    toast.error(error);
   }
+
+  // async function SignUpHandler(e: FormEvent) {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post("/api/auth/register", {
+  //       name: `${firstName} ${lastName}`,
+  //       email,
+  //       password,
+  //     });
+  //     const data = response.data;
+  //     console.log(data);
+
+  //     if (!data.success) {
+  //       console.log(data);
+  //       toast.error(data.message);
+  //     } else {
+  //       console.log(data);
+  //       toast.success(data.message);
+  //       setUser?.(data.user);
+  //     }
+  //   } catch (err) {
+  //     console.error("Error during Sign-up:", err);
+  //     toast.error("Failed Signing Up");
+  //   }
+  // }
+
+  // if (user?._id) {
+  //   redirect("/dashboard");
+  // }
 
   return (
     <PageTemplate>

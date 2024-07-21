@@ -52,9 +52,19 @@ export default function ReleaseNote() {
 
         <FadeDown variant="div" delay={0.3} duration={0.6}>
           <div className="border rounded-lg mb-5 shadow-lg px-6 py-5 bg-zinc-100 dark:bg-zinc-900">
-            <h2 className="text-2xl font-semibold mb-4 text-cente text-[#16A34A]">
+            <h2 className="text-2xl font-semibold mb-1 text-cente text-[#16A34A]">
               Upcoming Features and Updates
             </h2>
+            <h5 className="mb-2 text-muted-foreground">
+              Visit{" "}
+              <span className="text-blue-500 cursor-pointer">
+                <a href="https://github.com/users/rishabhgokhe/projects/2">
+                  here
+                </a>
+              </span>{" "}
+              for upcoming features and issue information
+            </h5>
+            <Separator />
             <ul className="flex flex-col space-y-2 text-left">
               {upcomingFeatures.map((item, index) => (
                 <li

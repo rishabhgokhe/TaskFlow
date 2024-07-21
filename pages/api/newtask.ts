@@ -5,22 +5,30 @@ import { handleRes } from "@/middleware/resHandler";
 import { catchAsyncError } from "@/middleware/catchAsyncError";
 import isAuthenticated from "@/middleware/isAuthenticated";
 
-const newTask = catchAsyncError(async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method !== "POST") return handleRes(res, 400, false, "Only post request is allowed");
-    await connectDB();
-    const { title, description } = req.body;
+const newTask = catchAsyncError(
+  async (req: NextApiRequest, res: NextApiResponse) => {
+    if (req.method !== "POST") return handleRes(res, 400, false, "Only POST requests are allowed");
 
-    if (!title) return handleRes(res, 400, false, "Title is required");
+    await connectDB();
+
+    const { taskTitle, description, dueDate, list } = req.body;
+
+    if (!taskTitle) return handleRes(res, 400, false, "Task Title is required");
+    if (!description) return handleRes(res, 400, false, "Description is required");
 
     const user = await isAuthenticated(req, res);
-    if (!user) return handleRes(res, 401, false, "no account is logged in");
+    if (!user) return handleRes(res, 401, false, "No account is logged in");
 
     await Task.create({
-      title,
+      title: taskTitle,
       description,
-      user: user._id
+      user: user._id,
+      scheduledAt: dueDate,
+      list,
     });
-    handleRes(res, 200, true, "Task created");
-});
+
+    handleRes(res, 200, true, "Task created successfully");
+  }
+);
 
 export default newTask;

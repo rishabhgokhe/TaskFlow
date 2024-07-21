@@ -10,6 +10,10 @@ const TaskSchema = new mongoose.Schema({
     required: true,
     maxLength: [100, "Description cannot exceed 100 Characters"],
   },
+  list: {
+    type: String,
+    required: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
