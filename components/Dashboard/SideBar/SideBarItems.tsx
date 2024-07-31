@@ -54,14 +54,9 @@ export const SideBarItems = ({
           <Link
             key={id}
             href="#"
-            className="flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary"
+            className="capitalize flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary"
           >
             {icon} {name}
-            {name === "Today" || name === "Scheduled" ? (
-              <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                10
-              </Badge>
-            ) : null}
           </Link>
         ))}
 

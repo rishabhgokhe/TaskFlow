@@ -50,37 +50,37 @@ export const SideBarList = [
 
 export const listNames = [
   {
-    name: "Default",
+    name: "default",
     link: "/list/default",
     icon: <InboxIcon className="w-5 h-5" />,
   },
   {
-    name: "Personal",
+    name: "personal",
     link: "/list/personal",
     icon: <ProfileIcon className="w-5 h-5" />,
   },
   {
-    name: "Family",
+    name: "family",
     link: "/list/family",
     icon: <UserGroupIcon className="w-5 h-5" />,
   },
   {
-    name: "Shopping",
+    name: "shopping",
     link: "/list/shopping",
     icon: <ShoppingBasket02Icon className="w-5 h-5" />,
   },
   {
-    name: "Groceries",
+    name: "groceries",
     link: "/list/groceries",
     icon: <VegetarianFoodIcon className="w-5 h-5" />,
   },
   {
-    name: "Academics",
+    name: "academics",
     link: "/list/academics",
     icon: <StudyLampIcon className="w-5 h-5" />,
   },
   {
-    name: "Work",
+    name: "work",
     link: "/list/work",
     icon: <WorkUpdateIcon className="w-5 h-5" />,
   },
@@ -143,7 +143,7 @@ export const iconLinkData = [
   },
   {
     name: "Mail Us",
-    link: `mailto:rishabhgokhe@gmail.com`,
+    link: `mailto:rishabhgokhe20contact@gmail.com`,
     icon: <MailAdd02Icon />,
   },
 ];
@@ -280,6 +280,19 @@ const updateBadgeData = {
 };
 
 export const releaseNotesData = [
+  {
+    version: "0.1.2",
+    date: "2024-07-31",
+    badge: {
+      title: `${updateBadgeData.minor.title}`,
+      color: updateBadgeData.minor.color,
+    },
+    notes: [
+      "Removed second bento grid from Landing page",
+      "Modified Task Schema with updated letter casing",
+      "Working on : Fix Client Side error of TypeError cannot access undefined user - caused by redux | occured when relogging"
+    ],
+  },
   {
     version: "0.1.1",
     date: "2024-07-21",

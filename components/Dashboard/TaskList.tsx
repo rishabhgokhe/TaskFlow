@@ -1,21 +1,22 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
-import axios from "axios";
-import toast from "react-hot-toast";
-import { Task } from "@/types";
 import { Skeleton } from "../ui/skeleton";
 import {
   Dialog,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Button } from "../ui/button";
+
+import axios from "axios";
+import toast from "react-hot-toast";
+import { Task } from "@/types";
+
+import { AddTaskButton } from "./Add Task Button/AddTaskButton";
+import { EditTaskDialogContent } from "./Add Task Button/EditTaskDialog";
 
 import TickDouble03Icon from "@/public/svg/icons/TickDouble03Icon";
 import PencilEdit02Icon from "@/public/svg/icons/PencilEdit02Icon";
-import { AddTaskButton } from "./Add Task Button/AddTaskButton";
-import { Button } from "../ui/button";
-import { EditTaskDialogContent } from "./Add Task Button/EditTaskDialog";
-
 // --------------------------------------------------------------------------------------
 export default function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);

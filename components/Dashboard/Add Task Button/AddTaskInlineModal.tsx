@@ -58,7 +58,7 @@ export function AddTaskInlineModal({
       taskTitle: "",
       description: "",
       dueDate: undefined,
-      list: "Default",
+      list: "default",
     },
   });
 
@@ -188,7 +188,7 @@ export function AddTaskInlineModal({
                 </FormControl>
                 <SelectContent>
                   {listNames.map((item, id) => (
-                    <SelectItem key={id} value={item.name}>
+                    <SelectItem key={id} value={item.name} className="capitalize">
                       {item.name}
                     </SelectItem>
                   ))}

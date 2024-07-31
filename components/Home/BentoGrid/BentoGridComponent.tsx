@@ -80,7 +80,7 @@ const SkeletonOne = () => {
       >
         <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
         <div className="w-full">
-          <p className="w-full text-[0.9rem] bg-gray-100 px-1 rounded-full dark:bg-neutral-900">
+          <p className="w-2/5 text-[0.9rem] px-1 rounded-full dark:bg-neutral-900">
             Share essential grocery items with ease.{" "}
           </p>
         </div>
@@ -90,7 +90,7 @@ const SkeletonOne = () => {
         className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 w-7/8 ml-auto bg-white dark:bg-black"
       >
         <div className="w-full">
-          <p className="w-full text-[0.9rem] bg-gray-100 px-1 rounded-full dark:bg-neutral-900">
+          <p className="w-full text-[0.9rem] px-1 rounded-full dark:bg-neutral-900">
             add to your TaskFlow grocery list.{" "}
           </p>
         </div>{" "}
@@ -102,7 +102,7 @@ const SkeletonOne = () => {
       >
         <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
         <div className="w-full">
-          <p className="w-ful text-[0.9rem] bg-gray-100 px-1 rounded-full dark:bg-neutral-900">
+          <p className="w-3/5 text-[0.9rem] px-1 rounded-full dark:bg-neutral-900">
             Enjoy the convenience of organized sharing.
           </p>
         </div>{" "}
@@ -348,28 +348,6 @@ const SkeletonFive = () => {
 
 const items = [
   {
-    title: "Share with Ease",
-    description: (
-      <span className="text-sm">
-        Share your tasks with family and friends effortlessly with TaskFlow.
-      </span>
-    ),
-    header: <SkeletonOne />,
-    className: "md:col-span-1",
-    icon: <GroupLayersIcon className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Smart Reminders",
-    description: (
-      <span className="text-sm">
-        Set reminders for your tasks and never miss a deadline.
-      </span>
-    ),
-    header: <SkeletonTwo />,
-    className: "md:col-span-1",
-    icon: <AiMagicIcon className="h-4 w-4 text-neutral-500" />,
-  },
-  {
     title: "Collaborative Features",
     description: (
       <span className="text-sm">
@@ -379,6 +357,29 @@ const items = [
     header: <SkeletonThree />,
     className: "md:col-span-1",
     icon: <AtomicPowerIcon className="h-4 w-4 text-neutral-500" />,
+  },
+  // {
+  //   title: "Smart Reminders",
+  //   description: (
+  //     <span className="text-sm">
+  //       Set reminders for your tasks and never miss a deadline.
+  //     </span>
+  //   ),
+  //   header: <SkeletonTwo />,
+  //   className: "md:col-span-1",
+  //   icon: <AiMagicIcon className="h-4 w-4 text-neutral-500" />,
+  // },
+  
+  {
+    title: "Share with Ease",
+    description: (
+      <span className="text-sm">
+        Share your tasks with family and friends effortlessly with TaskFlow.
+      </span>
+    ),
+    header: <SkeletonOne />,
+    className: "md:col-span-2",
+    icon: <GroupLayersIcon className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Insightful Analytics",
