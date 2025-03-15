@@ -1,10 +1,18 @@
-![TaskFlow Banner](https://res.cloudinary.com/dnytagac4/image/upload/v1741978836/TaskFlow_Banner_tgvy2e.png)
+![TaskFlow Banner](./public/images/TaskFlow%20Banner.png)
 
 # TaskFlow (To-Do List)
 
 ## Description
 
-TaskFlow is a powerful and intuitive web application designed to help users manage and organize their tasks efficiently. It offers a user-friendly interface to add, view, and manage to-do items, enhancing workflow organization and task tracking.
+TaskFlow is a powerful and intuitive web application designed to help users manage and organize their tasks efficiently. It provides a user-friendly interface to add, view, and manage to-do items, enhancing workflow organization and task tracking.
+
+## 📸 Screenshots  
+
+#### Home Page
+![TaskFlow Home](https://res.cloudinary.com/dnytagac4/image/upload/v1742009633/TaskFlow-Screenshot-3_dbsrvl.png)  
+
+#### Dashboard  
+![Task Management](https://res.cloudinary.com/dnytagac4/image/upload/v1742009633/TaskFlow-Screenshot-1_fgz5ha.png)  
 
 # Table of Contents
 
@@ -44,7 +52,7 @@ TaskFlow is a powerful and intuitive web application designed to help users mana
 **Currently Working on Feature User Authentication ContextProvider...**
 
 
-## 🛠️ Tech Stack
+## 🖥️ Tech Stack
 
 - **Frontend:** JavaScript, TypeScript, Next JS, HTML, CSS, 
 - **Backend:** Node.js, Express.js
