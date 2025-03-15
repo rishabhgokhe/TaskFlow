@@ -154,7 +154,7 @@ TaskFlow is a project born out of my desire to create a simple yet powerful tool
 ## 📨 Feedback
 
 If you have any feedback, please reach out to us at 
-[![Email Me](https://img.shields.io/badge/Email-Me-black?style=flat&logo=[YOUR_ICON_URL]&logoColor=white)](mailto:rishabhgokhe20contact@gmail.com)
+[![Email Me](https://img.shields.io/badge/Email-Me-black?style=flat&logo=gmail&logoColor=white)](mailto:rishabhgokhe20contact@gmail.com)
 
 ## 🔗 Connect with Me
 
