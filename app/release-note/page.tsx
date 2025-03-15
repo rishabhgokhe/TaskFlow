@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 import { releaseNotesData, upcomingFeatures } from "@/lib/Data";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import FadeDown from "@/components/Animations/FadeDown";
+import { FadeDown } from "animease";
 
 import Task01Icon from "@/public/svg/icons/Task01Icon";
 import CancelCircleIcon from "@/public/svg/icons/CancelCircleIcon";

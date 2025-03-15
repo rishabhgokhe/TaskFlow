@@ -34,7 +34,7 @@ import { listNames } from "@/lib/Data";
 import ArrowDown05Icon from "@/public/svg/icons/ArrowDown05Icon";
 import CalendarUpload01Icon from "@/public/svg/icons/CalendarUpload01Icon";
 import axios from "axios";
-import FadeDown from "@/components/Animations/FadeDown";
+import { FadeDown } from "animease";
 
 const FormSchema = z.object({
   taskTitle: z

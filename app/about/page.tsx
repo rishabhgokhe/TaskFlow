@@ -11,7 +11,7 @@ import { baseRedColor } from "@/lib/Colors";
 import MailOpenIcon from "@/public/svg/icons/MailOpenIcon";
 import UserCircleIcon from "@/public/svg/icons/UserCircleIcon";
 import AppleFinderIcon from "@/public/svg/icons/AppleFinderIcon";
-import FadeDown from "@/components/Animations/FadeDown";
+import {FadeDown} from "animease";
 
 const containerVariants = {
   hidden: { opacity: 0 },

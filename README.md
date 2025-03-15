@@ -1,4 +1,4 @@
-![TaskFlow Banner](./public/images/TaskFlow%20Banner.png)
+![TaskFlow Banner](https://res.cloudinary.com/dnytagac4/image/upload/v1741978836/TaskFlow_Banner_tgvy2e.png)
 
 # TaskFlow (To-Do List)
 
@@ -14,14 +14,13 @@ TaskFlow is a powerful and intuitive web application designed to help users mana
   - [Setup Instructions](#️-setup-instructions)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
-  - [Future Enhancements](#future-enhancements)
-  - [Live Preview](#live-preview)
-  - [Acknowledgments](#acknowledgments)
-  - [Code of Conduct](#code-of-conduct)
-  - [License](#license)
+  - [Live Preview](#-live-preview)
+  - [Acknowledgments](#-acknowledgments)
+  - [Code of Conduct](#-code-of-conduct)
+  - [License](#-license)
   - [Authors](#-authors)
   - [About Me](#-about-me)
-  - [Feedback](#feedback)
+  - [Feedback](#-feedback)
   - [Contribution Guidelines](#-contribution-guidelines)
 
 ## ✨ Features
@@ -42,16 +41,12 @@ TaskFlow is a powerful and intuitive web application designed to help users mana
 - **Tags:** Allow each task to be tagged for easy search and categorization.
 - **Optional Description:** Enable users to add optional descriptions to their tasks.
 
-**Track all development and features on our** [TaskFlow Development](https://github.com/users/rishabhgokhe/projects/2)
-
-
-## Currently Working on Feature (User Authentication)
-I am currently working on User Login ContextProvider.
+**Currently Working on Feature User Authentication ContextProvider...**
 
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** HTML, CSS, JavaScript, TypeScript, Next JS
+- **Frontend:** JavaScript, TypeScript, Next JS, HTML, CSS, 
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB (MongoDB Atlas)
 
@@ -95,19 +90,13 @@ I am currently working on User Login ContextProvider.
 
 6. **Access the Application:**  
    Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
-  
-## Future Enhancements
 
-- Implement user authentication for personalized task lists.
-- Add due dates and priority levels for tasks.
-- Provide notifications and reminders for upcoming tasks.
-- Major Design and UI Improvement
 
-## Live Preview
+## 🌐 Live Preview
 
 TaskFlow is live on Vercel: [taskflow20.vercel.app](https://taskflow20.vercel.app/)
 
-## Acknowledgments
+## 🙌 Acknowledgments
 
 - [Next.js](https://nextjs.org/) for the Frontend Framework
 - [React](https://react.dev/) for the Frontend Framework
@@ -115,20 +104,17 @@ TaskFlow is live on Vercel: [taskflow20.vercel.app](https://taskflow20.vercel.ap
 - [Node.js](https://nodejs.org/) for the JavaScript runtime
 - [Express.js](https://expressjs.com/) for the web application framework
 
-## Code of Conduct
+## 📜 Code of Conduct
 
 We expect all participants in our community to adhere to our Code of Conduct. Please read the full text [here](CODE_OF_CONDUCT.md).
-
-## License
+## 🔒 License
 
 This project is proprietary and not open for public use. All rights are reserved by Rishabh Gokhe.
-For inquiries regarding the licensing of this software, please contact: rishabhgokhe@gmail.com
+For full license details, refer to the [LICENSE](LICENSE) file.
 
----
+For inquiries regarding the licensing of this software, please contact: [![Email Me](https://img.shields.io/badge/Email-Me-black?style=flat&logo=[YOUR_ICON_URL]&logoColor=white)](mailto:rishabhgokhe20contact@gmail.com)
 
-Ready to collaborate and improve your task management experience? Contact me at [![Email Me](https://img.shields.io/badge/Email-Me-black?style=flat&logo=[YOUR_ICON_URL]&logoColor=white)](mailto:rishabhgokhe20contact@gmail.com)
-
-## Contribution Guidelines
+## 💡 Contribution Guidelines
 
 Contributions are welcome! Please follow these steps to contribute:
 1. Fork the repository.
@@ -152,7 +138,19 @@ Feel free to reach out if you have any questions, suggestions, or just want to c
 
 TaskFlow is a project born out of my desire to create a simple yet powerful tool for managing tasks. I believe that staying organized is key to success, and TaskFlow is designed to help users achieve just that.
 
-## Feedback
+## 📨 Feedback
 
 If you have any feedback, please reach out to us at 
 [![Email Me](https://img.shields.io/badge/Email-Me-black?style=flat&logo=[YOUR_ICON_URL]&logoColor=white)](mailto:rishabhgokhe20contact@gmail.com)
+
+## 🔗 Connect with Me
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/rishabh-gokhe-22168b287)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=outline&logoColor=white)](https://portfolio-rishabhgokhe.vercel.app/)
+[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/rishabh_gokhe/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rishabhgokhe20contact@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rishabhgokhe)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com/rishabhgokhe)
+[![Instagram](https://img.shields.io/badge/Instagram-DD2A7B?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/rishabh_gokhe)
+
+**Email Address** : [rishabhgokhe20contact@gmail.com](mailto:rishabhgokhe20contact@gmail.com)

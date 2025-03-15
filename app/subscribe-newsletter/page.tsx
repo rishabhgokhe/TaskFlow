@@ -14,7 +14,7 @@ import AlertBox from "@/components/elements/AlertBox";
 import CustomButton from "@/components/elements/CustomButton";
 import PageTemplate from "@/components/elements/PageTemplate";
 import toast from "react-hot-toast";
-import FadeDown from "@/components/Animations/FadeDown";
+import { FadeDown } from "animease";
 
 import InformationCircleIcon from "@/public/svg/icons/InformationCircleIcon";
 import MailSend01Icon from "@/public/svg/icons/MailSend01Icon";

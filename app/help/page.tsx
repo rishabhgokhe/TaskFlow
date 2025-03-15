@@ -12,7 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import Search02Icon from "@/public/svg/icons/Search02Icon";
 import { motion } from "framer-motion";
-import FadeDown from "@/components/Animations/FadeDown";
+import {FadeDown} from "animease";
 
 export default function Help() {
   const initial = { opacity: 0, y: -20 };

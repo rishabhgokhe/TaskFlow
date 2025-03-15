@@ -1,5 +1,5 @@
 import React from "react";
-import FadeDown from "../Animations/FadeDown";
+import { FadeDown } from "animease";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 
 export default function AlertBox({

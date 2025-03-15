@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import BackButton from "@/components/elements/BackButton";
 import CustomLinkButton from "@/components/elements/CustomLinkButton";
 import Home01Icon from "@/public/svg/icons/Home01Icon";
-import FadeDown from "@/components/Animations/FadeDown";
-import FadeUp from "@/components/Animations/FadeUp";
+import { FadeDown , FadeUp } from "animease";
 
 export default function NotFound() {
   return (

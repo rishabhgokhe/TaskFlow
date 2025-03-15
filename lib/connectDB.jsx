@@ -1,5 +1,4 @@
-import { log } from "console"
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
 export default async function connectDB() {
     await mongoose.connect(process.env.MONGODB_URI)
