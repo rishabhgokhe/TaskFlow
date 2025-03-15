@@ -6,13 +6,20 @@
 
 TaskFlow is a powerful and intuitive web application designed to help users manage and organize their tasks efficiently. It provides a user-friendly interface to add, view, and manage to-do items, enhancing workflow organization and task tracking.
 
-## 📸 Screenshots  
+## 📸 Screenshots
 
-#### Home Page
-![TaskFlow Home](https://res.cloudinary.com/dnytagac4/image/upload/v1742009633/TaskFlow-Screenshot-3_dbsrvl.png)  
+Explore TaskFlow’s clean and intuitive UI!
 
-#### Dashboard  
-![Task Management](https://res.cloudinary.com/dnytagac4/image/upload/v1742009633/TaskFlow-Screenshot-1_fgz5ha.png)  
+### **Home Page**
+![TaskFlow Home](https://res.cloudinary.com/dnytagac4/image/upload/v1742026378/TaskFlow_Homepage_w31rzr.png)
+
+### **Task Management Dashboard**
+#### Light Mode
+![TaskFlow Dashboard](https://res.cloudinary.com/dnytagac4/image/upload/v1742026378/TaskFlow_Dashboard_wgifsl.png)
+
+#### Dark Mode
+![TaskFlow Dashboard Dark](https://res.cloudinary.com/dnytagac4/image/upload/v1742026378/TaskFlow_Dashboard_Dark_kbrkdt.png)
+
 
 # Table of Contents
 
