@@ -115,12 +115,17 @@ TaskFlow is live on Vercel: [taskflow20.vercel.app](https://taskflow20.vercel.ap
 ## 📜 Code of Conduct
 
 We expect all participants in our community to adhere to our Code of Conduct. Please read the full text [here](CODE_OF_CONDUCT.md).
-## 🔒 License
 
-This project is proprietary and not open for public use. All rights are reserved by Rishabh Gokhe.
+## 🔒 License  
+
+This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)** license.
+
+You are **welcome to contribute** via pull requests and issues, but **commercial use, redistribution, or proprietary modifications** are **strictly prohibited** without explicit permission.
+
 For full license details, refer to the [LICENSE](LICENSE) file.
 
-For inquiries regarding the licensing of this software, please contact: [![Email Me](https://img.shields.io/badge/Email-Me-black?style=flat&logo=[YOUR_ICON_URL]&logoColor=white)](mailto:rishabhgokhe20contact@gmail.com)
+For licensing inquiries or permissions, please contact:
+[![Email Me](https://img.shields.io/badge/Email-Me-black?style=flat&logo=gmail&logoColor=white)](mailto:rishabhgokhe20contact@gmail.com)
 
 ## 💡 Contribution Guidelines
 
